@@ -1,0 +1,17 @@
+{% if lesson_list %}
+    <table>
+
+        <tr>
+            <th>Lesson Name</th>
+            <th>Lesson Description</th>
+        </tr>
+        {% for lesson in lesson_list %}
+        <tr>
+            <td><a href="/content/{{ lesson.id }}/">{{ lesson.lesson_name }}</a></td>
+            <td>{{lesson.lesson_description}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No lessons are available.</p>
+{% endif %}

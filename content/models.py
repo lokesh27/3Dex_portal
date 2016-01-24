@@ -5,7 +5,7 @@ from django.db import models
 # Create your models here.
 class Lesson(models.Model):
     lesson_name=models.CharField(max_length=20)
-    lesson_description=models.CharField(max_length=50,null=True)
+    lesson_description=models.TextField(blank=True,null=True)
     added_date=models.DateTimeField('date added')
     video_link=models.CharField(max_length=500)
     def __unicode__(self):
