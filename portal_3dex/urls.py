@@ -18,7 +18,7 @@ from django.contrib import admin
 import portal_3dex.views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    #url(r'^', include('content.urls'),name='content'),
+    url(r'^content/', include('content.urls'),name='content'),
     url(r'^$', portal_3dex.views.do_login),
     url(r'^logout/$', portal_3dex.views.do_logout),
     url(r'^auth/$', portal_3dex.views.auth_view),

@@ -9,7 +9,7 @@ Hello {{first_name}}. Click <a href="/logout">here</a>to logout
         </tr>
         {% for lesson in lesson_list %}
         <tr>
-            <td><a href="/auth/{{ lesson.id }}/">{{ lesson.lesson_name }}</a></td>
+            <td><a href="/content/{{ lesson.id }}/">{{ lesson.lesson_name }}</a></td>
             <td>{{lesson.lesson_description}}</td>
         </tr>
         {% endfor %}
