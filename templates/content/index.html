@@ -1,3 +1,5 @@
+{% if first_name %}
+Hello {{first_name}}. Click <a href="/logout">here</a>to logout
 {% if lesson_list %}
     <table>
 
@@ -7,7 +9,7 @@
         </tr>
         {% for lesson in lesson_list %}
         <tr>
-            <td><a href="/content/{{ lesson.id }}/">{{ lesson.lesson_name }}</a></td>
+            <td><a href="/auth/{{ lesson.id }}/">{{ lesson.lesson_name }}</a></td>
             <td>{{lesson.lesson_description}}</td>
         </tr>
         {% endfor %}
@@ -15,3 +17,4 @@
 {% else %}
     <p>No lessons are available.</p>
 {% endif %}
+{% endif%}

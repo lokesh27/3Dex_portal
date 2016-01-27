@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # Create your views here.
 def index(request):
     lesson_list = Lesson.objects.order_by('added_date')
-    context={'lesson_list':lesson_list}
+    context={'lesson_list':lesson_list,'first_name':request.user.first_name}
     return render(request,'content/index.html',context)
 
 def detail(request, lesson_id):
