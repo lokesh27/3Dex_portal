@@ -1,5 +1,44 @@
-<h1>{{ lesson.lesson_name }}</h1>
-<br/>
-<h3>{{lesson.lesson_description}}</h3>
-<br/>
-{{lesson.video_link|safe}}
+<!DOCTYPE HTML>
+<html lang="en">
+ <head>
+ 	<title>HOME</title>
+ 	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ </head>
+ <body>	
+ 	<div class="container-fluid">
+        {% include 'content/Header.html' %}
+ 	     <ul class="pagination pull-right" style="margin-top:80px;">
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+          </ul>
+ 		<div class="text-center text-uppercase page-header" style="margin-top:80px;">
+          <h2>{{ lesson.lesson_name }}</h2>
+        </div>
+
+        <div  class="text-left text-uppercase wrap-text">
+          <h3>{{lesson.lesson_description}}</h3>
+        </div>
+        <div class="row" >
+        	<div class="col-sm-6 col-xs-6 col-md-6">
+             <p>3D printing, also known as additive manufacturing (AM), refers to various processes used to synthesize a three-dimensional object.[1] In 3D printing, successive layers of material are formed under computer control to create an object.[2] These objects can be of almost any shape or geometry, and are produced from a 3D model or other electronic data source. A 3D printer is a type of industrial robot.</p>
+            </div>
+            <div class="col-sm-6 col-xs-6 col-md-6">
+            	{{lesson.video_link|safe}}
+            </div>	
+        </div>
+        <ul class="pager">
+             <li class="previous"><a href="#">Previous</a></li>
+             <li class="next"><a href="#">Next</a></li>
+        </ul> 
+        {% include 'content/Footer.html' %}
+    </div>
+ </body>
+</html>
+

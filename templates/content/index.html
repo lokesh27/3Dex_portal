@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% if first_name %}
 Hello {{first_name}}. Click <a href="/logout">here</a>to logout
 {% if lesson_list %}
@@ -18,3 +19,44 @@ Hello {{first_name}}. Click <a href="/logout">here</a>to logout
     <p>No lessons are available.</p>
 {% endif %}
 {% endif%}
+=======
+<!DOCTYPE HTML>
+<html lang="en">
+ <head>
+    <title>HOME</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ </head>
+ <body> 
+    <div class="container-fluid" style="margin-top:80px;">
+        {% include 'content/Header.html' %}
+     {% if lesson_list %}
+         <table>
+            <div class="row">
+                <div class="col-sm-6 col-xs-6 col-md-6">
+                     <tr>
+                         <th>Lesson Name</th>
+                         <th>Lesson Description</th>
+                     </tr>
+                </div>     
+                {% for lesson in lesson_list %}
+                <div class="col-sm-6 col-xs-6 col-md-6">
+                     <tr>
+                         <td><a href="/content/{{ lesson.id }}/">{{ lesson.lesson_name }}</a></td>
+                         <td>{{lesson.lesson_description}}</td>
+                     </tr>
+                </div>      
+                {% endfor %}
+            </div>    
+         </table>
+     {% else %}
+    <p>No lessons are available.</p>
+     {% endif %}
+     {% include 'content/Footer.html' %}
+    </div>
+</body>
+</html>
+>>>>>>> ui
