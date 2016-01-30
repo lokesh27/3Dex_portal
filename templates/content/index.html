@@ -1,25 +1,4 @@
-<<<<<<< HEAD
-{% if first_name %}
-Hello {{first_name}}. Click <a href="/logout">here</a>to logout
-{% if lesson_list %}
-    <table>
 
-        <tr>
-            <th>Lesson Name</th>
-            <th>Lesson Description</th>
-        </tr>
-        {% for lesson in lesson_list %}
-        <tr>
-            <td><a href="/content/{{ lesson.id }}/">{{ lesson.lesson_name }}</a></td>
-            <td>{{lesson.lesson_description}}</td>
-        </tr>
-        {% endfor %}
-    </table>
-{% else %}
-    <p>No lessons are available.</p>
-{% endif %}
-{% endif%}
-=======
 <!DOCTYPE HTML>
 <html lang="en">
  <head>
@@ -33,7 +12,8 @@ Hello {{first_name}}. Click <a href="/logout">here</a>to logout
  <body> 
     <div class="container-fluid" style="margin-top:80px;">
         {% include 'content/Header.html' %}
-     {% if lesson_list %}
+        {% if first_name %}
+        {% if lesson_list %}
          <table>
             <div class="row">
                 <div class="col-sm-6 col-xs-6 col-md-6">
@@ -55,8 +35,9 @@ Hello {{first_name}}. Click <a href="/logout">here</a>to logout
      {% else %}
     <p>No lessons are available.</p>
      {% endif %}
+     {% endif %}
      {% include 'content/Footer.html' %}
     </div>
 </body>
 </html>
->>>>>>> ui
+
