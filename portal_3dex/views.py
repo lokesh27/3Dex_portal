@@ -10,15 +10,21 @@ def do_login(request):
 
 
 def auth_view(request):
-    username = request.POST.get('username','')
-    password = request.POST.get('password','')
-    user = authenticate(username=username, password=password)
-    if user is not None:
-        if user.is_active:
-            login(request, user)
+    if request.method=='GET':
+        if request.user.is_active:
             return index(request)
+        else:
+            return render(request,'invalid.html')
     else:
-        return render(request,'invalid.html')
+        username = request.POST.get('username','')
+        password = request.POST.get('password','')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return index(request)
+        else:
+            return render(request,'invalid.html')
 
 
 def do_logout(request):
