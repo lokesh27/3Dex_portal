@@ -9,4 +9,4 @@ def index(request):
 
 def detail(request, lesson_id):
     lesson = get_object_or_404(Lesson, pk=lesson_id)
-    return render(request, 'content/detail.html', {'lesson': lesson})
+    return render(request, 'content/detail.html', {'lesson': lesson,'first_name':request.user.first_name})

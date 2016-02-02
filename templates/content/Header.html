@@ -29,9 +29,13 @@
          </ul>
          <ul class="nav navbar-nav navbar-right">
            <li><a href="#">{{first_name}}</a></li>
-           <li><a href="/logout"><span class="glyphicon glyphicon-log-out">LogOut</a></li>
-           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-           <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+           <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
+           {% if not first_name %}
+             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+           {% else %}
+             <li><a href="/feedback/send">Feedback</a></li>
+           {% endif %}
          </ul>
        </div>
     </nav>

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.template.context_processors import csrf
-from content import views
+from content.views import index
 
 def do_login(request):
     c = {}
@@ -16,7 +16,7 @@ def auth_view(request):
     if user is not None:
         if user.is_active:
             login(request, user)
-            return views.index(request)
+            return index(request)
     else:
         return render(request,'invalid.html')
 
