@@ -15,22 +15,19 @@
         {% if first_name %}
         {% if lesson_list %}
          <table>
-            <div class="row">
-                <div class="col-sm-6 col-xs-6 col-md-6">
+         
                      <tr>
                          <th>Lesson Name</th>
                          <th>Lesson Description</th>
-                     </tr>
-                </div>     
+                     </tr>    
                 {% for lesson in lesson_list %}
-                <div class="col-sm-6 col-xs-6 col-md-6">
                      <tr>
                          <td><a href="/content/{{ lesson.id }}/">{{ lesson.lesson_name }}</a></td>
                          <td>{{lesson.lesson_description}}</td>
                      </tr>
-                </div>      
+                     
                 {% endfor %}
-            </div>    
+            
          </table>
      {% else %}
     <p>No lessons are available.</p>

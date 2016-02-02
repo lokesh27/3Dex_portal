@@ -2,12 +2,47 @@
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
-<form method="post" action="/auth/">
-{% csrf_token %}
-<label for="username">Username</label>
-<input type="text" name="username" value="" id="username">
-<label for="password">Password</label>
-<input type="password" name="password" value="" id="password">
-<input type="submit" value="Login" />
-</form>
+<!DOCTYPE HTML>
+<html lang="en">
+ <head>
+ 	<title>HOME</title>
+ 	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ </head>
+
+
+
+ <body>
+ 	  <div class="container-fluid" style="width:100%;height:100%;padding:0;" >
+ 	  	     <div>
+ 	  	     	<img src="static/logo2.png" class="img-responsive" style="width:200px;height:70px;">
+ 	  	     </div>	
+ 	  	 	 <div>
+ 	  	 	     <img src="static/maps2.jpg" class="img-responsive" style="margin-top:-5px;width:100%;height:550px;">
+ 	  	 	 </div>
+ 	  </div>	 
+           <div class="panel panel-default img-rounded"style="position:absolute;width:300px;height:200px;margin-top:-400px;margin-left:1000px;border-radius:20px; ">
+             	<form method="post" action="/auth/">
+                 {% csrf_token %}
+                 <div class="panel-heading panel-primary" style="background-color:#337cbb;color:#ffffff;border-bottom: 1px solid transparent;border-top-right-radius:20px;border-top-left-radius:20px;">LOGIN
+                 </div>
+             	 <div class="panel-body">
+                         <label for="username"style="color:#337cbb;">Username</label>
+                         <input type="text" name="username" value="" id="username" style="border: 1px solid #ccc; border-radius:5px;">
+                         <label for="password" style="margin-top:30px;color:#337cbb;">Password</label>
+                         <input type="password" name="password" value="" id="password" style="border: 1px solid #ccc;border-radius:5px;">
+                         <div class="pull-right" style="margin-top:10px;">
+                             <input class="btn btn-primary" type="submit" value="Login" />
+                         </div>                                           
+                 </div>
+                </form>
+           </div>
+      <div class"container-fluid">
+      	 <div style="margin-top:10px; margin-left:550px;position:absolute;">Don't have an account yet?<div class="btn btn-default" style="background-color:black;color:#ffffff;">Register</div></div>
+      </div>      
+ </body>
+</html>
 {% endblock %}
