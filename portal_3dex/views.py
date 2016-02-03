@@ -6,7 +6,7 @@ from content.views import index
 def do_login(request):
     c = {}
     c.update(csrf(request))
-    return render(request,'login.html', c)
+    return render(request,'login1.html', c)
 
 
 def auth_view(request):
