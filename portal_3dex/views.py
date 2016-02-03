@@ -25,8 +25,3 @@ def auth_view(request):
                 return index(request)
         else:
             return render(request,'invalid.html')
-
-
-def do_logout(request):
-    logout(request)
-    return render(request,'login.html')
