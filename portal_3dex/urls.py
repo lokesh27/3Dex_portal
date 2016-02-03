@@ -18,11 +18,12 @@ from django.contrib import admin
 import portal_3dex.views
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth.views import logout
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^content/', include('content.urls'),name='content'),
     url(r'^$', portal_3dex.views.do_login),
-    url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
+    url(r'^logout/$', logout, {'next_page': '/'}),
     url(r'^auth/$', portal_3dex.views.auth_view),
     url(r'^feedback/', include('feedback.urls'),name='feedback'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
