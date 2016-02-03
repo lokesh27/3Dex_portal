@@ -1,0 +1,109 @@
+{% load staticfiles %}
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert-error">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert-error">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Feedback </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="{% static 'Feedback/assets/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'Feedback/assets/font-awesome/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'Feedback/assets/css/form-elements.css' %}">
+        <link rel="stylesheet" href="{% static 'Feedback/assets/css/style.css' %}">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body background="{% static 'Feedback/assets/img/backgrounds/1.jpg' %}">
+
+		<!-- Top menu -->
+		<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+			<div class="container">
+				
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				
+			</div>
+		</nav>
+
+        <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>FEEDBACK</strong></h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>LET US KNOW</h3>
+                            		<p>Fill in the form below to send us a feedback:</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-envelope"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom contact-form">
+			                    <form role="form" id="feedback_form" action="/feedback/send/" method="post">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+			                    		<label class="sr-only" for="contact-email">Email</label>
+			                        	<input type="text" name="email_id" placeholder="Email..." class="contact-email form-control" id="contact-email">
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="contact-name">NAME</label>
+			                        	<input type="text" name="name" placeholder="NAME..." class="contact-name form-control" id="contact-name">
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="contact-message">Message</label>
+			                        	<textarea name="query" placeholder="Message..." class="contact-message form-control" id="contact-message"></textarea>
+			                        </div>
+			                        <button type="submit" class="btn">Send message</button>
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="{% static 'Feedback/assets/js/jquery-1.11.1.min.js' %}"></script>
+        <script src="{% static 'Feedback/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'Feedback/assets/js/jquery.backstretch.min.js' %}"></script>
+        <script src="{% static 'Feedback/assets/js/retina-1.1.0.min.js' %}"></script>
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>
