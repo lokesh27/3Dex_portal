@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^logout/$', logout, {'next_page': '/'}),
     url(r'^auth/$', portal_3dex.views.auth_view),
     url(r'^feedback/', include('feedback.urls'),name='feedback'),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    url(r'^upload/',include('uploads.urls'),name='uploads'),
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
