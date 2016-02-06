@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <html lang="en">
  <head>
     <title>HOME</title>
@@ -6,6 +7,18 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Important Owl plugins -->
+    <link rel="stylesheet" href="{% static 'owl-carousel/owl.carousel.css' %}">
+     <!-- Default Theme -->
+    <link rel="stylesheet" href="{% static 'owl-carousel/owl.theme.css' %}">
+     <!--  jQuery 1.7+  -->
+    <script src="{% static 'assets-slider/assets/js/jquery-1.9.1.min.js' %}"></script>
+
+     <!-- Include js plugin -->
+    <script src="{% static 'owl-carousel/owl.carousel.js' %}"></script>
+      
+
  </head>
  <body> 
     <div class="container-fluid" style="margin-top:80px;">
@@ -31,8 +44,83 @@
     <p>No lessons are available.</p>
      {% endif %}
      {% endif %}
-     {% include 'content/Footer.html' %}
     </div>
+      <div class="container-fluid" style="margin-top:1000px;">
+         <script>$(document).ready(function() {$("#owl-example").owlCarousel();});</script>
+         <div id="owl-example" class=" owl-slider owl-carousel owl-theme">
+
+  
+             <div class="item">
+                 <img src="{% static 'assets-slider/assets/maps1.jpg' %}" width="200" height="100" data-toggle="modal" data-target="#modal1">
+                  
+             </div>
+             <div class="item">
+                 <img src="{%static 'assets-slider/assets/maps2.jpg' %}" width="200" height="100" data-toggle="modal" data-target="#modal2">
+             </div>
+             
+             <div class="item">
+                 <img src="{% static 'assets-slider/assets/maurya2.jpg' %}" width="200" height="100" data-toggle="modal" data-target="#modal3">
+             </div>
+             <div class="item">
+                 <img src="{% static 'assets-slider/assets/house 4.png' %}" width="200" height="100" data-toggle="modal" data-target="#modal4">
+             </div>
+  
+             <div class="item"><h1>5</h1></div>
+             <div class="item"><h1>6</h1></div>
+             <div class="item"><h1>7</h1></div>
+             <div class="item"><h1>8</h1></div>
+             <div class="item"><h1>9</h1></div>
+             <div class="item"><h1>10</h1></div>
+             <div class="item"><h1>11</h1></div>
+             <div class="item"><h1>12</h1></div>
+             <div class="item"><h1>13</h1></div>
+             <div class="item"><h1>14</h1></div>
+             <div class="item"><h1>15</h1></div>
+             <div class="item"><h1>16</h1></div>
+         </div>
+        <div id="modal1" class="modal fade" role="dialog">
+                     <div class="modal-dialog modal-lg">
+                         <div class="modal-content">
+                             <div class="modal-body">
+                                 <img src="{% static 'assets-slider/assets/maps1.jpg' %}" width="870" height="1000">
+                             </div>
+                         </div>   
+                     </div>
+                     
+        </div> 
+        <div id="modal2" class="modal fade" role="dialog">
+                     <div class="modal-dialog modal-lg">
+                         <div class="modal-content">
+                             <div class="modal-body">
+                                 <img src="{% static 'assets-slider/assets/maps2.jpg' %}" width="870" height="1000">
+                             </div>
+                         </div>   
+                     </div>
+                     
+        </div> 
+         <div id="modal3" class="modal fade" role="dialog">
+                     <div class="modal-dialog modal-lg">
+                         <div class="modal-content">
+                             <div class="modal-body">
+                                 <img src="{% static 'assets-slider/assets/maurya2.jpg' %}" width="870" height="1000">
+                             </div>
+                         </div>   
+                     </div>
+                     
+        </div>
+        <div id="modal4" class="modal fade" role="dialog">
+                     <div class="modal-dialog modal-lg">
+                         <div class="modal-content">
+                             <div class="modal-body">
+                                 <img src="{% static 'assets-slider/assets/house 4.png' %}" width="870" height="1000">
+                             </div>
+                         </div>   
+                     </div>
+                     
+        </div>
+     
+
+      </div>
 </body>
 </html>
 
