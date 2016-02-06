@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!-- Important Owl plugins -->
@@ -13,10 +13,10 @@
      <!-- Default Theme -->
     <link rel="stylesheet" href="{% static 'owl-carousel/owl.theme.css' %}">
      <!--  jQuery 1.7+  -->
-    <script src="{% static 'assets-slider/assets/js/jquery-1.9.1.min.js' %}"></script>
+    <!--<script src="{% static 'assets-slider/assets/js/jquery-1.9.1.min.js' %}"></script>-->
 
      <!-- Include js plugin -->
-    <script src="{% static 'owl-carousel/owl.carousel.js' %}"></script>
+    <script src="{% static 'owl-carousel/owl.carousel.min.js' %}"></script>
       
 
  </head>
@@ -46,8 +46,14 @@
      {% endif %}
     </div>
       <div class="container-fluid" style="margin-top:1000px;">
-         <script>$(document).ready(function() {$("#owl-example").owlCarousel();});</script>
-         <div id="owl-example" class=" owl-slider owl-carousel owl-theme">
+         <script>jQuery.noConflict();
+             $(document).ready(function() {
+          $("#owl-demo").owlCarousel({
+            navigation : true
+          });
+         });
+         </script>
+         <div id="owl-demo" class="owl-carousel">
 
   
              <div class="item">
