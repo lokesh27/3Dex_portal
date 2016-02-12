@@ -1,5 +1,4 @@
-from django.shortcuts import render_to_response
-from django.template import RequestContext
+from django.shortcuts import render
 from content.views import index
 
 from .models import upload
@@ -17,10 +16,6 @@ def list(request):
             return index(request)
     else:
         form = UploadForm() # A empty, unbound form
-    return render_to_response(
-        'uploads/list.html',
-        {'form': form},
-        context_instance=RequestContext(request)
-    )
+    return render(request,'uploads/list.html',{'form': form})
 
 

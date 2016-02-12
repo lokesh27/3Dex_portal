@@ -1,25 +1,44 @@
 from django.shortcuts import render
-from django.http import *
-from django.shortcuts import render_to_response,redirect
-from django.template import RequestContext
+from forms import RegForm
+from content.views import index
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login, logout
+from models import Student
 
-# Create your views here.
-def login_user(request):
-    logout(request)
-    username = password = ''
-    if request.POST:
-        username = request.POST['username']
-        password = request.POST['password']
-
-        user = authenticate(first_name=username, last_name=password)
-        if user is not None:
-            if user.is_active:
-                login(request, user)
-                return HttpResponseRedirect('/content')
-    return render_to_response('students/login.html', context_instance=RequestContext(request))
-
-@login_required(login_url='students/login/')
-def main(request):
-    return HttpResponse("welcome {{user.first_name}}")
+@login_required
+def reg_form(request):
+    flag='update'
+    try:
+        instance = Student.objects.get(first_name=request.user.first_name)
+    except:
+        flag='new'
+        pass
+    if request.method == 'POST':
+        if flag=='update':
+            form = RegForm(request.POST or None,instance=instance)
+        else:
+            form = RegForm(request.POST)
+        if form.is_valid():
+            first_name=request.POST.get('first_name','')
+            middle_name=request.POST.get('middle_name','')
+            last_name=request.POST.get('last_name','')
+            email_id=request.POST.get('email_id','')
+            phone_no=request.POST.get('phone_no','')
+            school_name=request.POST.get('school_name','')
+            if flag=='update':
+                instance.first_name=first_name
+                instance.last_name=last_name
+                instance.middle_name=middle_name
+                instance.email_id=email_id
+                instance.phone_no=phone_no
+                instance.school_name=school_name
+                instance.save()
+            else:
+                obj = Student(first_name=first_name,middle_name=middle_name,last_name=last_name, email_id=email_id, phone_no=phone_no,school_name=school_name)
+                obj.save()
+            return index(request)
+        else:
+            print form.errors
+    else:
+        form = RegForm()
+    context={'form': form}
+    return render(request,'registration.html',context)
