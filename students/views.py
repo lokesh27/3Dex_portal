@@ -8,7 +8,7 @@ from models import Student
 def reg_form(request):
     flag='update'
     try:
-        instance = Student.objects.get(first_name=request.user.first_name)
+        instance = Student.objects.get(first_name=request.user.email_id)
     except:
         flag='new'
         pass

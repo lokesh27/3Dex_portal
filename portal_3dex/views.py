@@ -14,7 +14,8 @@ def auth_view(request):
         if request.user.is_active:
             return index(request)
         else:
-            return render(request,'invalid.html')
+            context={'error':'Invalid details. Please try again'}
+            return render(request,'login1.html',context)
     else:
         username = request.POST.get('username','')
         password = request.POST.get('password','')
@@ -24,4 +25,5 @@ def auth_view(request):
                 login(request, user)
                 return index(request)
         else:
-            return render(request,'invalid.html')
+            context={'error':'Invalid details. Please try again'}
+            return render(request,'login1.html',context)

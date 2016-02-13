@@ -7,10 +7,7 @@ class Lesson(models.Model):
     lesson_name=models.CharField(max_length=20)
     lesson_description=models.TextField(blank=True,null=True)
     added_date=models.DateTimeField('date added')
-    video_link=models.CharField(max_length=500)
+    ppt_link=models.TextField()
     def __unicode__(self):
         return self.lesson_name
 
-class Assignment(models.Model):
-    lesson=models.ForeignKey(Lesson)
-    notes=models.TextField(blank=True)
