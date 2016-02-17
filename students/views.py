@@ -8,9 +8,10 @@ from models import Student
 def reg_form(request):
     flag='update'
     try:
-        instance = Student.objects.get(first_name=request.user.email_id)
+        instance = Student.objects.get(email_id=request.user.email)
     except:
         flag='new'
+        instance=''
         pass
     if request.method == 'POST':
         if flag=='update':
@@ -24,6 +25,7 @@ def reg_form(request):
             email_id=request.POST.get('email_id','')
             phone_no=request.POST.get('phone_no','')
             school_name=request.POST.get('school_name','')
+            class_name=request.POST.get('class_name','')
             if flag=='update':
                 instance.first_name=first_name
                 instance.last_name=last_name
@@ -31,14 +33,15 @@ def reg_form(request):
                 instance.email_id=email_id
                 instance.phone_no=phone_no
                 instance.school_name=school_name
+                instance.class_name=class_name
                 instance.save()
             else:
-                obj = Student(first_name=first_name,middle_name=middle_name,last_name=last_name, email_id=email_id, phone_no=phone_no,school_name=school_name)
+                obj = Student(first_name=first_name,middle_name=middle_name,last_name=last_name, email_id=email_id, phone_no=phone_no,school_name=school_name,class_name=class_name)
                 obj.save()
             return index(request)
         else:
             print form.errors
     else:
         form = RegForm()
-    context={'form': form}
+    context={'form': form,'student':instance}
     return render(request,'registration.html',context)

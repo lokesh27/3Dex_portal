@@ -10,5 +10,6 @@ class Student(models.Model):
     email_id=models.EmailField()
     phone_no=models.CharField(max_length=11)
     school_name=models.CharField(max_length=50)
+    class_name=models.CharField(max_length=10)
     def __unicode__(self):
         return self.first_name

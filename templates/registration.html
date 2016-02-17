@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% if form.errors %}
+    <br><br><br><br>
     {% for field in form %}
         {% for error in field.errors %}
             <div class="alert-error">
@@ -41,6 +42,15 @@
         <div class="top-content">
             <div class="inner-bg">
                 <div class="container" style="margin-top:-50px;">
+                    {% if student %}
+                    First Name={{student.first_name}}<br>
+                    Middle Name={{student.middle_name}}<br>
+                    Last Name={{student.last_name}}<br>
+                    Email ID={{student.email_id}}<br>
+                    Phone Number={{student.phone_no}}<br>
+                    School={{student.school_name}}<br>
+                    Class={{student.class_name}}<br>
+                    {% endif %}
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
                            <h1>Registration</h1>
@@ -79,6 +89,10 @@
                                     <div class="form-group">
 			                        	<label class="sr-only" for="school">SCHOOL</label>
 			                        	<input type="text" name="school_name" placeholder="School..." class="form-control">
+			                        </div>
+                                    <div class="form-group">
+			                        	<label class="sr-only" for="class">CLASS</label>
+			                        	<input type="text" name="class_name" placeholder="Class..." class="form-control">
 			                        </div>
 			                     <input type="submit" class="btn" name="submit" value="UPDATE DETAILS" style="background-color:#19b9e7;color:#ffffff;border-radius:2px;width:100% " />
                             </form>
