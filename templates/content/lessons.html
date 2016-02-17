@@ -33,7 +33,7 @@
                 {% for lesson in lesson_list %}
                      <tr>
                          <td style="color:#FFFFFF;text-align: center;vertical-align:middle;border:1px solid transparent;"><a style="color:#FFFFFF;"href="/content/{{ lesson.id }}/">{{ lesson.lesson_name }}</a></td>
-                         <td style="color:#FFFFFF;text-align: center;vertical-align:middle;border:1px solid transparent;">{{lesson.lesson_description}}</td>
+                         <td style="color:#FFFFFF;text-align: center;vertical-align:middle;border:1px solid transparent;">{{lesson.short_description}}</td>
                      </tr>
 
                 {% endfor %}

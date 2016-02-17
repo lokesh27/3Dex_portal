@@ -22,11 +22,11 @@
         </div>
 
         <div  class="text-left text-uppercase wrap-text">
-          <h3>{{lesson.lesson_description}}</h3>
+          <h3>{{lesson.short_description}}</h3>
         </div>
         <div class="row" >
         	<div class="col-sm-6 col-xs-6 col-md-6">
-             <p>3D printing, also known as additive manufacturing (AM), refers to various processes used to synthesize a three-dimensional object.[1] In 3D printing, successive layers of material are formed under computer control to create an object.[2] These objects can be of almost any shape or geometry, and are produced from a 3D model or other electronic data source. A 3D printer is a type of industrial robot.</p>
+             <p>{{lesson.full_description}}</p>
             </div>
             <div class="col-sm-6 col-xs-6 col-md-6">
             	{{lesson.ppt_link|safe}}

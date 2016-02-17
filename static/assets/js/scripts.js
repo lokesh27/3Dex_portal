@@ -1,10 +1,5 @@
 
 jQuery(document).ready(function() {
-	
-    /*
-        Fullscreen background
-    */
-    $.backstretch("static/assets/img/backgrounds/maps2.jpg");
     
     /*
         Form validation
