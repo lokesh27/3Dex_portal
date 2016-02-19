@@ -1,11 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Lesson
+from news.models import News
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 # Create your views here.
 @login_required
 def index(request):
-    context={'first_name':request.user.first_name}
+    news_list=News.objects.order_by('news_date')
+    context={'first_name':request.user.first_name,'News':news_list}
     return render(request,'content/index.html',context)
 
 @login_required

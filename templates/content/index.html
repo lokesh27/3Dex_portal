@@ -26,7 +26,11 @@
         {% include 'content/Header.html' %}
       <div class="row" style="margin-left:50px;">
           <div class="col-sm-4" >
- 
+        {% for news in News %}
+              <h3>{{news.news_heading}}</h3>
+              <br>
+              {{news.news_text}}
+              {% endfor %}
     <!-- normal -->
           <div class="ih-item square effect6 bottom_to_top"   style="background-color:#4DC1B8;">
           <a href="/content/">
