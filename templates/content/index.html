@@ -18,23 +18,19 @@
      <!-- Include js plugin -->
     <script src="{% static 'owl-carousel/owl.carousel.js' %}"></script>
     <link href="{% static 'ihover.css' %}" rel="stylesheet">
-     <link href="{% static 'index.css' %}" rel="stylesheet">      
+     <link href="{% static 'index.css' %}" rel="stylesheet">
 
  </head>
- <body> 
+ <body style="background-color:#f8f8f8">
     <div class="container-fluid" style="margin-top:80px;">
         {% include 'content/Header.html' %}
       <div class="row" style="margin-left:50px;">
           <div class="col-sm-4" >
-        {% for news in News %}
-              <h3>{{news.news_heading}}</h3>
-              <br>
-              {{news.news_text}}
-              {% endfor %}
+
     <!-- normal -->
-          <div class="ih-item square effect6 bottom_to_top"   style="background-color:#4DC1B8;">
+          <div class="ih-item square effect6 bottom_to_top"   style="background-color:#4DC1B8;margin-left:-80px;width:200px;border-radius:10px;">
           <a href="/content/">
-          <div class="img" style="width:100%;height:100%;"><div id="start"class="glyphicon glyphicon-book"></div></div>
+          <div class="img" style="width:100%;height:100%;"><div id="start"class="glyphicon glyphicon-book" style="margin-left: 70px;"></div></div>
           <div class="info">
               <h3>LESSONS</h3>
               <p>Description goes here</p>
@@ -42,14 +38,14 @@
           </a>
           </div>
     <!-- end normal -->
- 
+
           </div>
           <div class="col-sm-4" >
- 
+
     <!-- normal -->
-          <div class="ih-item square effect6 bottom_to_top"   style="background-color:#4C8AC0;">
+          <div class="ih-item square effect6 bottom_to_top"   style="background-color:#4C8AC0;width:200px;margin-left: -310px;border-radius:10px;">
           <a href="#">
-          <div class="img" style="width:100%;height:100%;"><div id="start"class="glyphicon glyphicon-play-circle"></div></div>
+          <div class="img" style="width:100%;height:100%;"><div id="start"class="glyphicon glyphicon-play-circle" style="margin-left: 70px;"></div></div>
           <div class="info">
               <h3>VIDEOS</h3>
               <p>Description goes here</p>
@@ -57,14 +53,14 @@
           </a>
           </div>
     <!-- end normal -->
- 
+
           </div>
           <div class="col-sm-4" >
- 
+
     <!-- normal -->
-          <div class="ih-item square effect6 bottom_to_top"   style="background-color:#ffff1a;">
+          <div class="ih-item square effect6 bottom_to_top"   style="background-color:#ffff1a;width:200px;margin-left: -540px;border-radius:10px;">
           <a href="/upload">
-          <div class="img" style="width:100%;height:100%;"><div id="start"class="glyphicon glyphicon-upload"></div></div>
+          <div class="img" style="width:100%;height:100%;"><div id="start"class="glyphicon glyphicon-upload" style="margin-left: 70px;"></div></div>
           <div class="info">
               <h3>.STL</h3>
               <p>Description goes here</p>
@@ -72,7 +68,11 @@
           </a>
           </div>
     <!-- end normal -->
- 
+        {% for news in News %}
+              <h3>{{news.news_heading}}</h3>
+              <br>
+              {{news.news_text}}
+              {% endfor %}
           </div>
       </div>
    </div>
@@ -81,106 +81,155 @@
              $(document).ready(function() {
           $("#owl-example").owlCarousel({
             autoPlay:3000,
+            items:11,
             stopOnHover : true,
           });
          });
          </script>
          <div id="owl-example" class="owl-carousel">
 
-  
+
              <div class="item">
-                 <img src="{% static 'assets-slider/assets/maps1.jpg' %}" width="250" height="100" data-toggle="modal" data-target="#modal1">
-                  
-             </div>
-             <div class="item">
-                 <img src="{%static 'assets-slider/assets/maps2.jpg' %}" width="250" height="100" data-toggle="modal" data-target="#modal2">
-             </div>
-             
-             <div class="item">
-                 <img src="{% static 'assets-slider/assets/maurya2.jpg' %}" width="250" height="100" data-toggle="modal" data-target="#modal3">
+                 <img src="{% static 'assets-slider/assets/maps1.jpg' %}" width="120" height="100" data-toggle="modal" data-target="#modal1">
+
              </div>
              <div class="item">
-                 <img src="{% static 'assets-slider/assets/house 4.png' %}" width="250" height="100" data-toggle="modal" data-target="#modal4">
+                 <img src="{%static 'assets-slider/assets/maps2.jpg' %}" width="120" height="100" data-toggle="modal" data-target="#modal2">
              </div>
-  
-             <div class="item"> 
-                 <img src="{% static 'assets-slider/assets/maps1.jpg' %}" width="250" height="100" data-toggle="modal" data-target="#modal1">
-             </div>
-             <div class="item">                
-                 <img src="{%static 'assets-slider/assets/maps2.jpg' %}" width="250" height="100" data-toggle="modal" data-target="#modal2">
+
+             <div class="item">
+                 <img src="{% static 'assets-slider/assets/maurya2.jpg' %}" width="120" height="100" data-toggle="modal" data-target="#modal3">
              </div>
              <div class="item">
-                 <img src="{% static 'assets-slider/assets/maurya2.jpg' %}" width="250" height="100" data-toggle="modal" data-target="#modal3">
+                 <img src="{% static 'assets-slider/assets/house 4.png' %}" width="120" height="100" data-toggle="modal" data-target="#modal4">
+             </div>
+
+             <div class="item">
+                 <img src="{% static 'assets-slider/assets/maps1.jpg' %}" width="120" height="100" data-toggle="modal" data-target="#modal1">
              </div>
              <div class="item">
-                 <img src="{% static 'assets-slider/assets/house 4.png' %}" width="250" height="100" data-toggle="modal" data-target="#modal4">
-             </div>
-             <div class="item"> 
-                 <img src="{% static 'assets-slider/assets/maps1.jpg' %}" width="250" height="100" data-toggle="modal" data-target="#modal1">
-             </div>
-             <div class="item"> 
-                 <img src="{%static 'assets-slider/assets/maps2.jpg' %}" width="250" height="100" data-toggle="modal" data-target="#modal2">
+                 <img src="{%static 'assets-slider/assets/maps2.jpg' %}" width="120" height="100" data-toggle="modal" data-target="#modal2">
              </div>
              <div class="item">
-                 <img src="{% static 'assets-slider/assets/maurya2.jpg' %}" width="250" height="100" data-toggle="modal" data-target="#modal3">
-             </div>
-             <div class="item"> 
-                 <img src="{% static 'assets-slider/assets/house 4.png' %}" width="250" height="100" data-toggle="modal" data-target="#modal4">
+                 <img src="{% static 'assets-slider/assets/maurya2.jpg' %}" width="120" height="100" data-toggle="modal" data-target="#modal3">
              </div>
              <div class="item">
-                 <img src="{% static 'assets-slider/assets/maps1.jpg' %}" width="250" height="100" data-toggle="modal" data-target="#modal1">   
+                 <img src="{% static 'assets-slider/assets/house 4.png' %}" width="120" height="100" data-toggle="modal" data-target="#modal4">
              </div>
-             <div class="item"> 
-                 <img src="{%static 'assets-slider/assets/maps2.jpg' %}" width="250" height="100" data-toggle="modal" data-target="#modal2">
+             <div class="item">
+                 <img src="{% static 'assets-slider/assets/maps1.jpg' %}" width="120" height="100" data-toggle="modal" data-target="#modal1">
              </div>
-             <div class="item"> 
-                 <img src="{% static 'assets-slider/assets/maurya2.jpg' %}" width="250" height="100" data-toggle="modal" data-target="#modal3">
+             <div class="item">
+                 <img src="{%static 'assets-slider/assets/maps2.jpg' %}" width="120" height="100" data-toggle="modal" data-target="#modal2">
              </div>
-             <div class="item"> 
-                 <img src="{% static 'assets-slider/assets/house 4.png' %}" width="250" height="100" data-toggle="modal" data-target="#modal4">
+             <div class="item">
+                 <img src="{% static 'assets-slider/assets/maurya2.jpg' %}" width="120" height="100" data-toggle="modal" data-target="#modal3">
+             </div>
+             <div class="item">
+                 <img src="{% static 'assets-slider/assets/house 4.png' %}" width="120" height="100" data-toggle="modal" data-target="#modal4">
+             </div>
+             <div class="item">
+                 <img src="{% static 'assets-slider/assets/maps1.jpg' %}" width="120" height="100" data-toggle="modal" data-target="#modal1">
+             </div>
+             <div class="item">
+                 <img src="{%static 'assets-slider/assets/maps2.jpg' %}" width="120" height="100" data-toggle="modal" data-target="#modal2">
+             </div>
+             <div class="item">
+                 <img src="{% static 'assets-slider/assets/maurya2.jpg' %}" width="120" height="100" data-toggle="modal" data-target="#modal3">
+             </div>
+             <div class="item">
+                 <img src="{% static 'assets-slider/assets/house 4.png' %}" width="120" height="100" data-toggle="modal" data-target="#modal4">
              </div>
          </div>
         <div id="modal1" class="modal fade" role="dialog">
                      <div class="modal-dialog modal-lg">
-                         <div class="modal-content">
-                             <div class="modal-body">
-                                 <img src="{% static 'assets-slider/assets/maps1.jpg' %}" width="870vw" height="600vh">
+                         <div class="modal-content" style="background-color: transparent;">
+                             <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <div class="" style="color:#FFFFFF;display:inline-block;">Abhishek Aggarwal</div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                 <div class="" style="color:#FFFFFF;display:inline-block;">School</div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                 <div class="" style="color:#FFFFFF;display:inline-block;">class</div>
                              </div>
-                         </div>   
+                             <div class="modal-body" style="background-color: #FFFFFF;">
+                                 <img src="{% static 'assets-slider/assets/maps1.jpg' %}" width="870vw" height="550vh">
+                             </div>
+                         </div>
                      </div>
-                     
-        </div> 
+
+        </div>
         <div id="modal2" class="modal fade" role="dialog">
                      <div class="modal-dialog modal-lg">
-                         <div class="modal-content">
-                             <div class="modal-body">
-                                 <img src="{% static 'assets-slider/assets/maps2.jpg' %}" width="870vw" height="600vh">
+                         <div class="modal-content" style="background-color: transparent;">
+                             <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <div class="" style="color:#FFFFFF;display:inline-block;">Abhishek Aggarwal</div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                 <div class="" style="color:#FFFFFF;display:inline-block;">School</div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                 <div class="" style="color:#FFFFFF;display:inline-block;">class</div>
                              </div>
-                         </div>   
+                             <div class="modal-body" style="background-color: #FFFFFF;">
+                                 <img src="{% static 'assets-slider/assets/maps2.jpg' %}" width="870vw" height="550vh">
+                             </div>
+                         </div>
                      </div>
-                     
-        </div> 
+
+        </div>
          <div id="modal3" class="modal fade" role="dialog">
                      <div class="modal-dialog modal-lg">
-                         <div class="modal-content">
-                             <div class="modal-body">
-                                 <img src="{% static 'assets-slider/assets/maurya2.jpg' %}" width="870vw" height="600vh">
+                         <div class="modal-content" style="background-color: transparent;">
+                             <div class="modal-header" >
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                 <div class="" style="color:#FFFFFF;display:inline-block;">Abhishek Aggarwal</div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                 <div class="" style="color:#FFFFFF;display:inline-block;">School</div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                 <div class="" style="color:#FFFFFF;display:inline-block;">class</div>
                              </div>
-                         </div>   
+                             <div class="modal-body" style="background-color: #FFFFFF;">
+                                 <img src="{% static 'assets-slider/assets/maurya2.jpg' %}" width="870vw" height="550vh">
+                             </div>
+                         </div>
                      </div>
-                     
+
         </div>
         <div id="modal4" class="modal fade" role="dialog">
                      <div class="modal-dialog modal-lg">
-                         <div class="modal-content">
-                             <div class="modal-body">
-                                 <img src="{% static 'assets-slider/assets/house 4.png' %}" width="870vw" height="600vh">
+                         <div class="modal-content" style="background-color: transparent;">
+                             <div class="modal-header" >
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <div class="" style="color:#FFFFFF;display:inline-block;">Abhishek Aggarwal</div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                 <div class="" style="color:#FFFFFF;display:inline-block;">School</div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                    <div class="" style="color:#FFFFFF;display:inline-block;"></div>
+                                 <div class="" style="color:#FFFFFF;display:inline-block;">class</div>
                              </div>
-                         </div>   
+                             <div class="modal-body" style="background-color: #FFFFFF;">
+                                 <img src="{% static 'assets-slider/assets/house 4.png' %}" width="870vw" height="550vh">
+                             </div>
+                         </div>
                      </div>
-                     
+
         </div>
-     
+
 
       </div>
 </body>

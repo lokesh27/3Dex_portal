@@ -1,4 +1,5 @@
-hover a
+#nav li:hover
 {
-  border-bottom: 2px solid #337ab7;
+  border-bottom-style: solid;
+  border-bottom-color: #337ab7;
 }
