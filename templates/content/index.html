@@ -28,9 +28,9 @@
           <div class="col-sm-4" >
 
     <!-- normal -->
-          <div class="ih-item square effect6 bottom_to_top"   style="background-color:#4DC1B8;margin-left:-80px;width:200px;border-radius:10px;">
+          <div class="ih-item square effect6 bottom_to_top"   style="background-color:#FFF9C4;margin-left:-30px;width:200px;border-radius:10px;border-color: #f8f8f8">
           <a href="/content/">
-          <div class="img" style="width:100%;height:100%;"><div id="start"class="glyphicon glyphicon-book" style="margin-left: 70px;"></div></div>
+          <div class="img" style="width:100%;height:100%;"><div id="start"class="glyphicon glyphicon-book" style="margin-left: 70px;margin-top: 80px;font-size: 40px;"></div></div>
           <div class="info">
               <h3>LESSONS</h3>
               <p>Description goes here</p>
@@ -43,9 +43,9 @@
           <div class="col-sm-4" >
 
     <!-- normal -->
-          <div class="ih-item square effect6 bottom_to_top"   style="background-color:#4C8AC0;width:200px;margin-left: -310px;border-radius:10px;">
+          <div class="ih-item square effect6 bottom_to_top"   style="background-color:#BBDEFB;width:200px;margin-left: -245px;border-radius:10px;border-color: #f8f8f8">
           <a href="#">
-          <div class="img" style="width:100%;height:100%;"><div id="start"class="glyphicon glyphicon-play-circle" style="margin-left: 70px;"></div></div>
+          <div class="img" style="width:100%;height:100%;"><div id="start"class="glyphicon glyphicon-play-circle" style="margin-left: 70px;margin-top: 80px;font-size: 40px;"></div></div>
           <div class="info">
               <h3>VIDEOS</h3>
               <p>Description goes here</p>
@@ -58,9 +58,9 @@
           <div class="col-sm-4" >
 
     <!-- normal -->
-          <div class="ih-item square effect6 bottom_to_top"   style="background-color:#ffff1a;width:200px;margin-left: -540px;border-radius:10px;">
+          <div class="ih-item square effect6 bottom_to_top"   style="background-color:#B2DFDB;width:200px;margin-left: -460px;border-radius:10px;border-color: #f8f8f8">
           <a href="/upload">
-          <div class="img" style="width:100%;height:100%;"><div id="start"class="glyphicon glyphicon-upload" style="margin-left: 70px;"></div></div>
+          <div class="img" style="width:100%;height:100%;"><div id="start"class="glyphicon glyphicon-upload" style="margin-left: 70px;margin-top: 80px;font-size: 40px;"></div></div>
           <div class="info">
               <h3>.STL</h3>
               <p>Description goes here</p>
@@ -68,11 +68,14 @@
           </a>
           </div>
     <!-- end normal -->
-        {% for news in News %}
-              <h3>{{news.news_heading}}</h3>
-              <br>
-              {{news.news_text}}
+          <div class="container-fluid pull-right scrollbar" id="ex3" style="overflow-y:scroll;background-color:#ffcdd2;border:8px solid #FFFFFF;border-radius: 10px;width:46vw;height:65vh;position:absolute;margin:-215 10 100 -230;box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);">
+                {% for news in News %}
+                    <div style="border-bottom:1px solid #E0E0E0;margin:10 0 10 0;">
+                    <h3 style="width: 100%;padding-left:5px;">{{news.news_heading}}</h3>
+                    {{news.news_text}}
+                    </div>
               {% endfor %}
+          </div>
           </div>
       </div>
    </div>
