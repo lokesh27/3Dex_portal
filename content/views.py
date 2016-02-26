@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Lesson
 from news.models import News
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+
 # Create your views here.
 @login_required
 def index(request):
@@ -13,7 +13,10 @@ def index(request):
 @login_required
 def detail(request, lesson_id):
     lesson = get_object_or_404(Lesson, pk=lesson_id)
-    return render(request, 'content/detail.html', {'lesson': lesson,'first_name':request.user.first_name})
+    if lesson.allow==True:
+        return render(request, 'content/detail.html', {'lesson': lesson,'first_name':request.user.first_name})
+    else:
+        return lesson_list(request)
 
 @login_required
 def lesson_list(request):

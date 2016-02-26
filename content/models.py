@@ -9,6 +9,7 @@ class Lesson(models.Model):
     full_description=models.TextField()
     added_date=models.DateTimeField('date added')
     ppt_link=models.TextField()
+    allow=models.BooleanField(default=False)
     def __unicode__(self):
         return self.lesson_name
 
