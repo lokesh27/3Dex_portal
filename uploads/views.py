@@ -5,17 +5,14 @@ from .models import upload
 from .forms import UploadForm
 # Create your views here.
 def list(request):
-    # Handle file upload
     if request.method == 'POST':
         form = UploadForm(request.POST, request.FILES)
         if form.is_valid():
             newstl = upload(stlfile = request.FILES['stlfile'],name=""+request.user.first_name+" "+request.user.last_name)
             newstl.save()
-
-            # Redirect to the upload list after POST
             return index(request)
     else:
-        form = UploadForm() # A empty, unbound form
+        form = UploadForm()
     return render(request,'uploads/list.html',{'form': form})
 
 

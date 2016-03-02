@@ -45,3 +45,13 @@ def reg_form(request):
         form = RegForm()
     context={'form': form,'student':instance}
     return render(request,'registration.html',context)
+
+@login_required
+def info(request):
+    try:
+        instance = Student.objects.get(email_id=request.user.email)
+    except:
+        instance=''
+        pass
+    context={'student':instance}
+    return render(request,'info.html',context)
