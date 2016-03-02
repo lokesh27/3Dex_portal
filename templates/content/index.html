@@ -18,11 +18,12 @@
      <!-- Include js plugin -->
     <script src="{% static 'owl-carousel/owl.carousel.js' %}"></script>
     <link href="{% static 'ihover.css' %}" rel="stylesheet">
-     <link href="{% static 'index.css' %}" rel="stylesheet">
+    <link href="{% static 'index.css' %}" rel="stylesheet">
+
 
  </head>
  <body style="background-color:#f8f8f8">
-    <div class="container-fluid" style="margin-top:80px;">
+        <div class="container-fluid" style="margin-top:80px;">
         {% include 'content/Header.html' %}
       <div class="row" style="margin-left:50px;">
           <div class="col-sm-4" >
@@ -232,8 +233,9 @@
                      </div>
 
         </div>
-
-
+      </div>
+      <div class="container-fluid" style="position:absolute;">
+         <iframe src="{% include 'content/calender.html' %}"></iframe>
       </div>
 </body>
 </html>
