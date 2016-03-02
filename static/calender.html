@@ -1,12 +1,9 @@
-{% load staticfiles %}
-<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>DN Calendar jQuery Plugin Demo</title>
-		<link rel="stylesheet" type="text/css" href="{%  static 'Calender/css/dncalendar-skin.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="Calender/css/dncalendar-skin.min.css">
         <style>
         body { background-color:#F5F7FA;}
         </style>
@@ -20,7 +17,7 @@
           <div id="dncalendar-container">
 		       </div>
 		       <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-		       <script type="text/javascript" src="{% static 'Calender/js/dncalendar.js' %}"></script>
+		       <script type="text/javascript" src="Calender/js/dncalendar.js"></script>
 		       <script type="text/javascript">
                 		$(document).ready(function() {
                 			var my_calendar = $("#dncalendar-container").dnCalendar({
