@@ -1,10 +1,50 @@
-{% if student %}
-    First Name={{student.first_name}}<br>
-    Middle Name={{student.middle_name}}<br>
-    Last Name={{student.last_name}}<br>
-    Email ID={{student.email_id}}<br>
-    Phone Number={{student.phone_no}}<br>
-    School={{student.school_name}}<br>
-    Class={{student.class_name}}<br>
-{% endif %}
-<a href="/students/reg">Update details</a>
+{% load staticfiles %}
+<html lang="en">
+ <head>
+    <title>HOME</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ </head>
+  {% include 'content/Header.html' %}
+ <body background="{% static 'assets/img/backgrounds/1.jpg' %}">
+             <div style="margin:10vh 0 0 45vw;">
+                 <h1 style="color:#FFFFFF">USER</h1>
+             </div>
+             <div class="panel-group">
+                <div class="panel panel-default" style="background-color:#f8f8f8;width:50vw;height:75vh;margin: 6vh 0 0 25vw;border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5); ">
+
+                       {% if student %}
+                       <div class="panel-heading" style="background-color: #FFFFFF;padding:10px; ">
+                           <img src="{% static 'image1.jpg' %}" width="100%" height="150px" style="filter:blur(2px);-webkit-filter: blur(2px);">
+                       </div>
+                       <div class="panel-body">
+                           <div  style="margin:-95 0 0 18vw; position:absolute;">
+                             <img src="{% static 'photo.jpg' %}" class="img-circle"  width="150" height="150"  style="">
+                            </div>
+                           <div class="text-center" style="font-size: 28px;margin:5vw 0 0 0;">
+                             {{student.first_name}}
+                             {{student.middle_name}}
+                             {{student.last_name}}
+                           </div>
+                           <div class="text-center"  style="font-size: 18px;">
+                             {{student.email_id}}
+                           </div>
+                           <div class="text-center" style="font-size: 18px;">
+                             {{student.phone_no}}
+                           </div>
+                           <div class="text-center" style="font-size: 18px;">
+                             SCHOOL:{{student.school_name}}
+                           </div>
+                           <div class="text-center" style="font-size: 18px;">
+                             CLASS:{{student.class_name}}
+                           </div>
+                       {% endif %}
+                       <a  class="btn btn-default pull-right" style="background-color: #19b9e7;color:#FFFFFF;margin-top:8vh" href="/students/reg">UPDATE</a>
+                       </div>
+                </div>
+             </div>
+ </body>
+</html>
