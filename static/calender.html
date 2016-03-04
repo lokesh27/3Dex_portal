@@ -35,11 +35,10 @@
 
                 			// init calendar
                 			my_calendar.build();
-
+							var utc = new Date().toJSON().slice(0,10);
                 			// update calendar
                 			my_calendar.update({
-                				minDate: "2015-12-05",
-                				defaultDate: "2016-01-01"
+					 			minDate: utc,
                 			});
                 		});
 </script>
