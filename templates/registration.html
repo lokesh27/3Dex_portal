@@ -55,7 +55,7 @@
                         		</div>
                             </div>
                             <div class="form-bottom contact-form">
-                            <form id="reg_form" method="post" action="/students/reg/">
+                            <form id="reg_form" method="post" action="/students/reg/" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <div class="form-group">
                                    <label class="sr-only" for="first-name">FIRST NAME</label>
@@ -84,6 +84,12 @@
                                     <div class="form-group">
 			                        	<label class="sr-only" for="class">CLASS</label>
 			                        	<input type="text" name="class_name" placeholder="Class..." class="form-control">
+			                        </div>
+                                    <div class="form-group">
+			                        	<label class="sr-only" for="avatar">AVATAR</label>
+                                        {{form.avatar.errors }}
+			                        	{{form.avatar.label_tag}}
+                                        {{form.avatar}}
 			                        </div>
 			                     <input type="submit" class="btn" name="submit" value="UPDATE DETAILS" style="background-color:#19b9e7;color:#ffffff;border-radius:2px;width:100% " />
                             </form>

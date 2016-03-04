@@ -10,6 +10,7 @@ class RegForm(forms.ModelForm):
     email_id=forms.EmailField()
     phone_no=forms.CharField(max_length=11)
     school_name=forms.CharField(max_length=50)
+    avatar=forms.ImageField(label="Upload profile picture",required=False)
     class Meta:
         model = Student
         exclude = ()
