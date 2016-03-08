@@ -22,8 +22,32 @@
 
  </head>
  <body style="background-color:#FFFFFF;">
-
+        <!--headers-->
         {% include 'content/Header.html' %}
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:#ffffff;border:0px solid #FFFFFF;width:500px;margin-left: 200px;margin-top: 10px;">
+         <div style="width:500px;margin-left: 100px;">
+           <ul class="nav nav-pills">
+              <li class="active"><a data-toggle="pill" href="#RESOURCES">RESOURCES</a></li>
+              <li><a data-toggle="pill" href="#SUBMISSION">SUBMISSION</a></li>
+              <li><a data-toggle="pill" href="#DISCUSSIONS">DISCUSSIONS</a></li>
+           </ul>
+
+              <div class="tab-content" style="">
+                  <div id="RESOURCES" class="tab-pane fade in active">
+                        <h3>HOME</h3>
+                        <p>Some content.</p>
+                  </div>
+                  <div id="SUBMISSION" class="tab-pane fade">
+                        <h3>Menu 1</h3>
+                        <p>Some content in menu 1.</p>
+                  </div>
+                  <div id="DISCUSSIONS" class="tab-pane fade">
+                        <h3>Menu 2</h3>
+                        <p>Some content in menu 2.</p>
+                  </div>
+              </div>
+           </div>
+        </nav>
 
     <!-- end normal -->
           <div class="container-fluid pull-right scrollbar" id="ex3" style="overflow-y:scroll;background-color:#f9f9f9;border:1px solid #FFFFFF;border-radius: 10px;width:25vw;height:70vh;position:absolute;margin:70 10 100 74vw;box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);">
