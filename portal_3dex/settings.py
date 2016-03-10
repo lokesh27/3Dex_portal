@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'feedback',
     'uploads',
     'news',
-    'videos',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -8,7 +8,13 @@ class Lesson(models.Model):
     short_description=models.CharField(max_length=50)
     full_description=models.TextField()
     added_date=models.DateTimeField('date added')
-    ppt_link=models.TextField()
+    type=models.CharField(max_length=20,choices=(
+    ('VID', 'Video'),
+    ('PPT', 'Presentation' ),
+    ('PDF', 'Pdf'),
+    ))
+    link=models.TextField(null=True,blank=True)
+    pdf=models.FileField(null=True,blank=True)
     allow=models.BooleanField(default=False)
     def __unicode__(self):
         return self.lesson_name
