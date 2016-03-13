@@ -34,12 +34,16 @@
 
               <div class="tab-content" style="">
                   <div id="RESOURCES" class="tab-pane fade in active">
-                        <h3>HOME</h3>
-                        <p>Some content.</p>
+                        <h3>Lessons</h3>
+                        {% for lesson in lesson_list %}
+                        {{lesson.lesson_name}}
+                        {{lesson.short_description}}
+                        <a href="/content/{{ lesson.id }}/" target="_blank">View</a>
+                        <br/>
+                        {% endfor %}
                   </div>
                   <div id="SUBMISSION" class="tab-pane fade">
-                        <h3>Menu 1</h3>
-                        <p>Some content in menu 1.</p>
+                        {% include 'list.html' %}
                   </div>
                   <div id="DISCUSSIONS" class="tab-pane fade">
                         <h3>Menu 2</h3>

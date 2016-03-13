@@ -14,7 +14,6 @@ class Lesson(models.Model):
     ('PDF', 'Pdf'),
     ))
     link=models.TextField(null=True,blank=True)
-    pdf=models.FileField(null=True,blank=True)
     allow=models.BooleanField(default=False)
     def __unicode__(self):
         return self.lesson_name

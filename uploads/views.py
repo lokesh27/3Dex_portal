@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from content.views import index
-
+from django.template.response import TemplateResponse
 from .models import upload
 from .forms import UploadForm
 # Create your views here.
@@ -14,6 +14,6 @@ def list(request):
             return index(request)
     else:
         form = UploadForm()
-    return render(request,'uploads/list.html',{'form': form})
+    return TemplateResponse(request,'list.html',{'form': form})
 
 
