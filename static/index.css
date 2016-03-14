@@ -1,12 +1,9 @@
-#ex3::-webkit-scrollbar-thumb{
-background-color:#B03C3F;
-border-radius:10px;
+#ONE
+{
+    overflow:hidden;
+    height:whatever px;
 }
-#ex3::-webkit-scrollbar-thumb:hover{
-background-color:#BF4649;
-border:1px solid #333333;
-}
-#ex3::-webkit-scrollbar-thumb:active{
-background-color:#A6393D;
-border:1px solid #333333;
+#ONE:hover
+{
+    overflow-y:scroll;
 }

@@ -21,39 +21,46 @@
 
 
  </head>
- <body style="background-color:#FFFFFF;">
+ <body style="background-color:#f9f9f9;">
         <!--headers-->
         {% include 'content/Header.html' %}
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:#ffffff;border:0px solid #FFFFFF;width:500px;margin-left: 200px;margin-top: 10px;">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:#ffffff;border:0px solid #FFFFFF;width:500px;margin-left: 350px;margin-top: 10px;">
          <div style="width:500px;margin-left: 100px;">
            <ul class="nav nav-pills">
               <li class="active"><a data-toggle="pill" href="#RESOURCES">RESOURCES</a></li>
               <li><a data-toggle="pill" href="#SUBMISSION">SUBMISSION</a></li>
               <li><a data-toggle="pill" href="#DISCUSSIONS">DISCUSSIONS</a></li>
+              <li><a data-toggle="pill" href="#UPDATES">UPDATES</a></li>
            </ul>
 
-              <div class="tab-content" style="">
-                  <div id="RESOURCES" class="tab-pane fade in active">
-                        <h3>Lessons</h3>
+              <div class="tab-content" id="ONE" style=" border:0px solid black;width:70vw;height:74vh;margin:0 30vw 0vh -15vw;background-color:#f9f9f9;overflow-y: scroll;">
+                  <div id="RESOURCES" class="tab-pane fade in active" style="margin-left: 2vw;">
+                        <h3 style="font-size: 24px;">LESSONS</h3>
                         {% for lesson in lesson_list %}
-                        {{lesson.lesson_name}}
-                        {{lesson.short_description}}
-                        <a href="/content/{{ lesson.id }}/" target="_blank">View</a>
-                        <br/>
+                        <div style="padding: 1vw 1vw 0 0;background-color:#FFFFFF;margin-top: 1vw;width:60vw;border: 1px solid #eee;;">
+                            <div  class="" style="color: #333;font-size: 14px;height:7vh;margin-left: 2vw;">
+
+                                   <strong>{{lesson.lesson_name}}</strong>
+                                   <p>{{lesson.short_description}}</p>
+                                   <a  class="btn pull-right" href="/content/{{ lesson.id }}/" target="_blank" style="background-color: #3498db;color:#FFFFFF;margin-top: -8vh;">View</a>
+                             </div>
+                        </div>
                         {% endfor %}
                   </div>
                   <div id="SUBMISSION" class="tab-pane fade">
-                        {% include 'list.html' %}
+
                   </div>
                   <div id="DISCUSSIONS" class="tab-pane fade">
-                        <h3>Menu 2</h3>
-                        <p>Some content in menu 2.</p>
+                       <div><h1>hfsr</h1></div>
+                  </div>
+                  <div id="UPDATES" class="tab-pane fade">
+
                   </div>
               </div>
            </div>
         </nav>
-
-    <!-- end normal -->
+         <script>$("#ONE").hover(function(){$(this).css("overflow-y","scroll");},function(){$(this).css("overflow-y","hidden");});</script>
+    <!-- end normal
           <div class="container-fluid pull-right scrollbar" id="ex3" style="overflow-y:scroll;background-color:#f9f9f9;border:1px solid #FFFFFF;border-radius: 10px;width:25vw;height:70vh;position:absolute;margin:70 10 100 74vw;box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);">
                 {% for news in News %}
                     <div style="border-bottom:1px solid #E0E0E0;margin:10 0 10 0;">
@@ -62,7 +69,7 @@
                     </div>
               {% endfor %}
           </div>
-
+-->
       <div class="container-fluid" style="bottom:10;position:absolute;width:100%;">
          <script>jQuery.noConflict();
              $(document).ready(function() {
