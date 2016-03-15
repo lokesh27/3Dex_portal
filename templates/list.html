@@ -1,10 +1,24 @@
 {% load staticfiles %}
 <html>
+    <head>
+
+                 <meta charset="utf-8">
+                 <meta name="viewport" content="width=device-width, initial-scale=1">
+                 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+                 <title>UPLOAD</title>
+        </head>
+         {% include 'content/Header.html' %}
         <body>
                 <!-- Upload form. Note enctype attribute! -->
+                <div class="container-fluid">
+                     {% include 'content/Header.html' %}
+                    <div class="" style="position:absolute;margin:20vh 0 0 43vw;">
+                        <h1 style="color:#FFFFFF;font-family:'Allerta', Helvetica, Arial, sans-serif;"><strong style="">UPLOAD</strong></h1>
+                    </div>
                     <div class="panel-group">
-                        <div class="panel panel-default" style=" border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5);">
-                           <form action="{% url 'list' %}" method="post" enctype="multipart/form-data">
+                         <div class="panel panel-default" style="width:28vw;margin:45vh 0 0 35vw;border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5);">                            <form action="{% url 'list' %}" method="post" enctype="multipart/form-data">
                                {% csrf_token %}
                                <p>{{ form.non_field_errors }}</p>
                                  <div class="panel-heading text-uppercase" style="color:#19b9e7;margin-left: 8vw;">
