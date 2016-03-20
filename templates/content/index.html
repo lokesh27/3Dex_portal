@@ -35,8 +35,30 @@
 
               <div class="tab-content" id="ONE" style=" border:0px solid black;width:70vw;height:74vh;margin:0 30vw 0vh -15vw;background-color:#f9f9f9;overflow-y: scroll;">
                   <div id="RESOURCES" class="tab-pane fade in active" style="margin-left: 2vw;">
-                        <h3 style="font-size: 24px;">LESSONS</h3>
-                        {% for lesson in lesson_list %}
+                        <h3 style="font-size: 24px;">PDF LESSONS</h3>
+                        {% for lesson in pdf_list %}
+                        <div style="padding: 1vw 1vw 0 0;background-color:#FFFFFF;margin-top: 1vw;width:60vw;border: 1px solid #eee;;">
+                            <div  class="" style="color: #333;font-size: 14px;height:7vh;margin-left: 2vw;">
+
+                                   <strong>{{lesson.lesson_name}}</strong>
+                                   <p>{{lesson.short_description}}</p>
+                                   <a  class="btn pull-right" href="/content/{{ lesson.id }}/" target="_blank" style="background-color: #3498db;color:#FFFFFF;margin-top: -8vh;">View</a>
+                             </div>
+                        </div>
+                        {% endfor %}
+                        <h3 style="font-size: 24px;">PPT LESSONS</h3>
+                        {% for lesson in ppt_list %}
+                        <div style="padding: 1vw 1vw 0 0;background-color:#FFFFFF;margin-top: 1vw;width:60vw;border: 1px solid #eee;;">
+                            <div  class="" style="color: #333;font-size: 14px;height:7vh;margin-left: 2vw;">
+
+                                   <strong>{{lesson.lesson_name}}</strong>
+                                   <p>{{lesson.short_description}}</p>
+                                   <a  class="btn pull-right" href="/content/{{ lesson.id }}/" target="_blank" style="background-color: #3498db;color:#FFFFFF;margin-top: -8vh;">View</a>
+                             </div>
+                        </div>
+                        {% endfor %}
+                        <h3 style="font-size: 24px;">VIDEO LESSONS</h3>
+                        {% for lesson in video_list %}
                         <div style="padding: 1vw 1vw 0 0;background-color:#FFFFFF;margin-top: 1vw;width:60vw;border: 1px solid #eee;;">
                             <div  class="" style="color: #333;font-size: 14px;height:7vh;margin-left: 2vw;">
 

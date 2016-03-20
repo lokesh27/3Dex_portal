@@ -6,9 +6,11 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required
 def index(request):
-    lesson_list = Lesson.objects.order_by('added_date')
+    pdf_list = Lesson.objects.filter(type="PDF")
+    video_list= Lesson.objects.filter(type="VID")
+    ppt_list=Lesson.objects.filter(type="PPT")
     news_list=News.objects.order_by('news_date')
-    context={'first_name':request.user.first_name,'News':news_list,'lesson_list':lesson_list}
+    context={'first_name':request.user.first_name,'News':news_list,'pdf_list':pdf_list,'video_list':video_list,'ppt_list':ppt_list}
     return render(request,'content/index.html',context)
 
 @login_required
