@@ -1,0 +1,14 @@
+{%if latest_question_list %}
+    <h1>Active Discussions</h1>
+    {% for question in latest_question_list %}
+    <h4>Question:{{question.question_text}}</h4>
+    <h5>Asked by:{{question.uploader}}</h5>
+    <br>
+        {% for reply in question.reply_set.all %}
+        {{reply.reply_text}}
+        <br/>
+        {% endfor %}
+    {% endfor %}
+{%else %}
+    No active discussions. Start one
+{% endif %}

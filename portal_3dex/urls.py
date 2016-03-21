@@ -22,6 +22,7 @@ from django.contrib.auth.views import logout
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^content/', include('content.urls'),name='content'),
+    url(r'^discuss/', include('discussions.urls'),name='discussions'),
     url(r'^$', portal_3dex.views.do_login),
     url(r'^logout/$', logout, {'next_page': '/'}),
     url(r'^auth/$', portal_3dex.views.auth_view),
