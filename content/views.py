@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Lesson
-from news.models import News
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -9,8 +8,7 @@ def index(request):
     pdf_list = Lesson.objects.filter(type="PDF")
     video_list= Lesson.objects.filter(type="VID")
     ppt_list=Lesson.objects.filter(type="PPT")
-    news_list=News.objects.order_by('news_date')
-    context={'first_name':request.user.first_name,'News':news_list,'pdf_list':pdf_list,'video_list':video_list,'ppt_list':ppt_list}
+    context={'first_name':request.user.first_name,'pdf_list':pdf_list,'video_list':video_list,'ppt_list':ppt_list}
     return render(request,'content/index.html',context)
 
 @login_required

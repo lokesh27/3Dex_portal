@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 import portal_3dex.views
+from news.views import display
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth.views import logout
@@ -23,6 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^content/', include('content.urls'),name='content'),
     url(r'^discuss/', include('discussions.urls'),name='discussions'),
+    url(r'^news/', display ,name='news'),
     url(r'^$', portal_3dex.views.do_login),
     url(r'^logout/$', logout, {'next_page': '/'}),
     url(r'^auth/$', portal_3dex.views.auth_view),
