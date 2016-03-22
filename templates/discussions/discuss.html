@@ -45,31 +45,28 @@
                                       <div  class="" style="color: #333;font-size: 14px;height:7vh;margin-left: 2vw;">
                                          <strong style="font-size: 16px;">{{question.question_text}}</strong>
                                          <p style="color: #BDBDBD">Asked by:<strong>{{question.uploader}}</strong></p>
-                                         <a  class="btn pull-right" data-toggle="modal" data-target="#zero" style="background-color: #3498db;color:#FFFFFF;margin-top: -8vh;">View</a>
+                                         <a  class="btn pull-right" data-toggle="modal" data-target="#{{question.pk}}" style="background-color: #3498db;color:#FFFFFF;margin-top: -8vh;">View</a>
                                       </div>
                                 </div>
-                                <div id="zero" class="modal fade"  role="dialog">
+                                <div id="{{question.pk}}" class="modal fade"  role="dialog">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content" style="background-color: transparent;">
                                              <div class="modal-header">
                                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                                              </div>
                                             <div class="modal-body" style="background-color: #FFFFFF;height:50vh;">
-
                                                  {% for reply in question.reply_set.all %}
                                                  {{reply.reply_text}}
                                                  <br/>
                                                  {% endfor %}
-
                                              </div>
                                         </div>
                                       </div>
-
                                  </div>
-                                                 {% endfor %}
-                                                 {%else %}
-                                                 No active discussions. Start one
-                                                 {% endif %}
+                                {% endfor %}
+                            {%else %}
+                                No active discussions. Start one
+                            {% endif %}
 
                 </div>
                 </div>
