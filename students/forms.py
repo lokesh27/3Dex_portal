@@ -7,10 +7,10 @@ class RegForm(forms.ModelForm):
     first_name=forms.CharField(max_length=20)
     last_name=forms.CharField(max_length=20)
     middle_name=forms.CharField(max_length=20,required = False)
-    email_id=forms.EmailField()
     phone_no=forms.CharField(max_length=11)
     school_name=forms.CharField(max_length=50)
     avatar=forms.ImageField(label="Upload profile picture",required=False)
+
     class Meta:
         model = Student
         exclude = ()

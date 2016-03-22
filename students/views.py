@@ -9,7 +9,6 @@ def reg_form(request):
     flag='update'
     try:
         instance = Student.objects.get(email_id=request.user.email)
-        print instance,request.user.email
     except:
         flag='new'
         instance=''
@@ -41,7 +40,7 @@ def reg_form(request):
             else:
                 obj = Student(first_name=first_name,middle_name=middle_name,last_name=last_name, email_id=email_id, phone_no=phone_no,school_name=school_name,class_name=class_name,avatar=avatar)
                 obj.save()
-            return index(request)
+            return info(request)
         else:
             print form.errors
     else:
