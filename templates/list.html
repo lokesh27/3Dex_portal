@@ -25,51 +25,45 @@
                        <ul class="nav nav-pills">
                           <li><a  href="/auth">RESOURCES</a></li>
                           <li class="active"><a href="/upload/list/">SUBMISSION</a></li>
-                          <li><a data-toggle="pill" href="#DISCUSSIONS">DISCUSSIONS</a></li>
+                          <li><a href="/discuss">DISCUSSIONS</a></li>
                           <li><a data-toggle="pill" href="#UPDATES">UPDATES</a></li>
                        </ul>
                    <div class="tab-content" id="ONE" style=" border:0px solid black;width:70vw;height:74vh;margin:0 30vw 0vh -15vw;background-color:#f9f9f9;">
-                        <div id="RESOURCES" class="tab-pane fade" style="margin-left: 2vw;">
 
-                        </div>
                         <div id="SUBMISSION" class="tab-pane fade in active">
                               <div class="container-fluid">
 
-                    <div class="" style="position:absolute;margin:6vh 0 0 23vw;">
-                        <h1 style="color:#000000;"><strong style="">UPLOAD</strong></h1>
-                    </div>
-                    <div class="panel-group">
-                         <div class="panel panel-default" style="width:28vw;margin:25vh 0 0 15vw;border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5);">
-                             <form action="{% url 'list' %}" method="post" enctype="multipart/form-data">
-                               {% csrf_token %}
-                               <p>{{ form.non_field_errors }}</p>
-                                 <div class="panel-heading text-uppercase" style="color:#19b9e7;margin-left: 8vw;">
-                                     <p>{{ form.stlfile.label_tag }} </p>
+                                 <div class="" style="position:absolute;margin:6vh 0 0 23vw;">
+                                    <h1 style="color:#000000;"><strong style="">UPLOAD</strong></h1>
                                  </div>
-                                 <div class="panel-body" style="color:#19b9e7;">
-                                     <p>
-                                        {{ form.stlfile.errors }}
-                                        {{ form.stlfile }}
-                                     </p>
-                                     <div class="form-group">
-			                    		<label class="sr-only" for="description">Description</label>
-			                        	<input type="text" name="description" placeholder="Description" class="description form-control" id="description">
-			                        </div>
-                                 </div>
-                               <br/><br/>
-                               <br/>
-                               <p><input class="btn pull-right" type="submit" value="Upload" style="background-color:#19b9e7;color:#ffffff;border-radius:2px;position:absolute;margin:-4vw 0 0 19vw; " /></p>
-                           </form>
+                              <div class="panel-group">
+                                   <div class="panel panel-default" style="width:28vw;margin:25vh 0 0 15vw;border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5);">
+                                       <form action="{% url 'list' %}" method="post" enctype="multipart/form-data">
+                                          {% csrf_token %}
+                                          <p>{{ form.non_field_errors }}</p>
+                                          <div class="panel-heading text-uppercase" style="color:#19b9e7;margin-left: 8vw;">
+                                          <p>{{ form.stlfile.label_tag }} </p>
+                                          </div>
+                                       <div class="panel-body" style="color:#19b9e7;">
+                                          <p>
+                                          {{ form.stlfile.errors }}
+                                          {{ form.stlfile }}
+                                          </p>
+                                          <div class="form-group">
+			                    		    <label class="sr-only" for="description">Description</label>
+			                        	    <input type="text" name="description" placeholder="Description" class="description form-control" id="description">
+			                              </div>
+                                       </div>
+                                          <br/><br/>
+                                          <br/>
+                                            <p><input class="btn pull-right" type="submit" value="Upload" style="background-color:#19b9e7;color:#ffffff;border-radius:2px;position:absolute;margin:-4vw 0 0 19vw; " /></p>
+                                       </form>
+                                   </div>
+                              </div>
+                              </div>
                         </div>
-                    </div>
-                </div>
-                        </div>
-                        <div id="DISCUSSIONS" class="tab-pane fade">
-                             <h1>COMING SOON</h1>
-                        </div>
-                        <div id="UPDATES" class="tab-pane fade">
 
-                        </div>
+
                    </div>
                    </div>
                 </nav>
