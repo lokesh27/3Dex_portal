@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <html lang="en">
  <head>
-    <title>HOME</title>
+    <title>DISCUSSIONS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -36,31 +36,69 @@
 
          </div>
         </nav>
-                <div class="tab-content" id="ONE" style=" border:0px solid black;width:70vw;height:74vh;margin:4vw 30vw 0vh 17vw;background-color:#f9f9f9;overflow-y: scroll;">
+        <div class="tab-content" id="ONE" style=" border:0px solid black;width:70vw;height:74vh;margin:4vw 30vw 0vh 17vw;background-color:#f9f9f9;overflow-y: scroll;">
                 <div id="DISCUSSIONS" class="tab-pane fade in active" style="margin-left: 2vw;">
                             {%if latest_question_list %}
-                                <h1  class="text-center" style="font-size: 32px;">Active Discussions</h1>
+                                <h1  class="" style="font-size: 32px;">Active Discussions</h1>
+                                <a  class="btn pull-right " data-toggle="modal" data-target="#newdiscussion" style="background-color: #FF3D00;color:#FFFFFF;margin-top: -8vh;margin-left: 50vw;position: absolute;">CREATE NEW<h5 class="glyphicon glyphicon-plus" style="margin-left: 0.5em;"></h5></a>
+                                <div id="newdiscussion" class="modal fade"  role="dialog">
+                                           <div class="modal-dialog modal-lg" style="margin-top:20vh;">
+                                              <div class="modal-content" style="background-color: #3498db;">
+                                                 <div class="modal-header" style="height:10vh;">
+                                                  <h4  class="text-center" style="color: #FFFFFF;font-size: 24"><strong>NEW DISCUSSION</strong></h4>
+                                                  <button type="button" class="close" data-dismiss="modal" style="margin-top: -40px;;">&times;</button>
+                                                 </div>
+                                              <div class="modal-body" style="background-color: #FFFFFF;height:50vh;">
+
+                                                <form role="form" style="margin-top: 5vh;">
+                                                     <div class="form-group">
+                                                          <label for="QUESTION" style="color:#FF3D00;">QUESTION</label>
+                                                          <input type="text" class="form-control" id="QUESTION" placeholder="Enter a one line subject or ask a question">
+                                                     </div>
+                                                     <div class="form-group">
+                                                          <label for="details" style="color:#FF3D00;">ADD DETAILS</label>
+                                                          <textarea class="form-control" rows="5" id="details" placeholder="Additional Details if any"></textarea>
+                                                     </div>
+                                                     <button type="submit" class="btn  pull-right" style="background-color: #3498db;color:#FFFFFF" >Start Discussion</button>
+                                                </form>
+                                              </div>
+                                              </div>
+                                           </div>
+                                </div>
                                {% for question in latest_question_list %}
                                 <div style="padding: 1vw 1vw 0 0;background-color:#FFFFFF;margin-top: 1vw;width:60vw;border: 1px solid #eee;;">
-                                      <div  class="" style="color: #333;font-size: 14px;height:7vh;margin-left: 2vw;">
-                                         <strong style="font-size: 16px;">{{question.question_text}}</strong>
+                                      <div  class="text-justify" style="color: #333;font-size: 14px;height:auto;margin-left: 2vw;">
+                                         <div style="width:55vw;"><strong style="font-size: 16px;">{{question.question_text}}</strong></div>
                                          <p style="color: #BDBDBD">Asked by:<strong>{{question.uploader}}</strong></p>
                                          <a  class="btn pull-right" data-toggle="modal" data-target="#{{question.pk}}" style="background-color: #3498db;color:#FFFFFF;margin-top: -8vh;">View</a>
                                       </div>
                                 </div>
                                 <div id="{{question.pk}}" class="modal fade"  role="dialog">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content" style="background-color: transparent;">
-                                             <div class="modal-header">
-                                                  <h4></h4>
-                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                             </div>
-                                            <div class="modal-body" style="background-color: #FFFFFF;height:50vh;">
-                                                 {% for reply in question.reply_set.all %}
-                                                 {{reply.reply_text}}
-                                                 <br/>
-                                                 {% endfor %}
-                                             </div>
+                                    <div class="modal-dialog modal-lg" align="center" style="margin-top:2vh;border-radius: 8px;width:50vw;">
+                                        <div class="modal-content" style="background-color: #3498db;height:50vh;width:50vw;">
+                                                 <div class="modal-header" style="height:auto;">
+                                                    <h4  class="text-center " style="color: #FFFFFF;font-size: 24"><strong>{{question.question_text}}</strong></h4>
+
+
+                                                 </div>
+                                            <div  class="modal-body" align="center" style="background-color: #f9f9f9;height:60vh;overflow-y: scroll;">
+                                                      {% for reply in question.reply_set.all %}
+                                                <div class="panel panel-default text-left"  style="width:40vw;">
+                                                    <div class="panel-heading" style="background-color: #FFFFFF;border:0;color:#FF3D00;">Abhishek Aggarwal</div>
+                                                    <div class="panel-body"  class="text-justify" style="height: auto;">
+                                                      <p class="text-justify">{{reply.reply_text}}</p>
+                                                    </div>
+                                                </div>
+                                                      {% endfor %}
+                                            </div>
+                                            <div class="modal-footer" style="background-color: #FFFFFF;width:auto;">
+                                                     <form role="form">
+                                                        <div class="form-group" style="">
+                                                          <textarea class="form-control" rows="4" id="reply" placeholder="POST A REPLY..."></textarea>
+                                                        </div>
+                                                          <button type="submit" class="btn  pull-right" data-dismiss="modal" style="background-color: #3498db;color:#FFFFFF;margin-right: 10px;" >SUBMIT</button>
+                                                     </form>
+                                            </div>
                                         </div>
                                       </div>
                                  </div>
@@ -70,9 +108,11 @@
                             {% endif %}
 
                 </div>
-                </div>
+        </div>
 
        <script>$("#ONE").hover(function(){$(this).css("overflow-y","scroll");},function(){$(this).css("overflow-y","hidden");});</script>
+
+
 
         <div class="container-fluid" style="bottom:10;position:absolute;width:100%;">
          <script>jQuery.noConflict();
