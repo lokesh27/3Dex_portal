@@ -3,4 +3,5 @@ from discussions import views
 urlpatterns=[
     url(r'^$', views.index),
     url(r'^ask/', views.ask),
+    url(r'^answer',views.reply)
 ]
