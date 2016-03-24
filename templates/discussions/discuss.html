@@ -60,7 +60,7 @@
                                                      </div>
                                                      <div class="form-group">
                                                           <label for="details" style="color:#FF3D00;">ADD DETAILS</label>
-                                                          <textarea class="form-control" rows="5" id="details" placeholder="Additional Details if any"></textarea>
+                                                          <textarea name="additional_info" class="form-control" rows="5" id="details" placeholder="Additional Details if any"></textarea>
                                                      </div>
                                                      <button type="submit" class="btn  pull-right" style="background-color: #3498db;color:#FFFFFF" >Start Discussion</button>
                                                 </form>
@@ -85,9 +85,12 @@
 
                                                  </div>
                                             <div  class="modal-body" align="center" style="background-color: #f9f9f9;height:60vh;overflow-y: scroll;">
+                                                {% if question.additional_info %}
+                                                    Additional info :{{question.additional_info}}
+                                                {% endif %}
                                                       {% for reply in question.reply_set.all %}
                                                 <div class="panel panel-default text-left"  style="width:40vw;">
-                                                    <div class="panel-heading" style="background-color: #FFFFFF;border:0;color:#FF3D00;">Abhishek Aggarwal</div>
+                                                    <div class="panel-heading" style="background-color: #FFFFFF;border:0;color:#FF3D00;">{{reply.name}}</div>
                                                     <div class="panel-body"  class="text-justify" style="height: auto;">
                                                       <p class="text-justify">{{reply.reply_text}}</p>
                                                     </div>

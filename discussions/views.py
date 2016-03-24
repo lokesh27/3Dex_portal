@@ -13,10 +13,10 @@ def ask(request):
         if form.is_valid():
             uploader=request.user.first_name+" "+request.user.last_name
             question_text=request.POST.get('question_text','')
+            additional_info=request.POST.get('additional_info','')
             import datetime
             now = datetime.datetime.now()
-            obj = Question(uploader=uploader, question_text=question_text,pub_date=now)
-            print obj
+            obj = Question(uploader=uploader, question_text=question_text,pub_date=now,additional_info=additional_info)
             obj.save()
             return index(request)
         else:

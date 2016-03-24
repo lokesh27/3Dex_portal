@@ -6,14 +6,14 @@ from django.db import models
 class Question(models.Model):
     question_text=models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
-    uploader = models.CharField(max_length=20,null=True)
-
+    uploader = models.CharField(max_length=30)
+    additional_info=models.TextField(null=True,blank=True)
     def __unicode__(self):
         return self.question_text
 
 class Reply(models.Model):
     question = models.ForeignKey(Question)
     reply_text = models.CharField(max_length=200)
-
+    name=models.CharField(max_length=30)
     def __unicode__(self):
         return self.reply_text
