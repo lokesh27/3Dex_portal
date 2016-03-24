@@ -22,7 +22,7 @@ def reg_form(request):
             first_name=request.POST.get('first_name','')
             middle_name=request.POST.get('middle_name','')
             last_name=request.POST.get('last_name','')
-            email_id=request.POST.get('email_id','')
+            email_id=request.user.email
             phone_no=request.POST.get('phone_no','')
             school_name=request.POST.get('school_name','')
             class_name=request.POST.get('class_name','')

@@ -1,5 +1,6 @@
 from django.conf.urls import url,include
-from discussions.views import index
+from discussions import views
 urlpatterns=[
-    url(r'^$', index),
+    url(r'^$', views.index),
+    url(r'^ask/', views.ask),
 ]

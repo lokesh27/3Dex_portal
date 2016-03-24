@@ -50,10 +50,13 @@
                                                  </div>
                                               <div class="modal-body" style="background-color: #FFFFFF;height:50vh;">
 
-                                                <form role="form" style="margin-top: 5vh;">
+                                                <form role="form"  action="/discuss/ask/" method="post" style="margin-top: 5vh;">
+                                                    {% csrf_token %}
+                                                    <input type="hidden" value="2016-01-01" name="pub_date" />
+                                                    <input type="hidden" value="foo" name="uploader" />
                                                      <div class="form-group">
                                                           <label for="QUESTION" style="color:#FF3D00;">QUESTION</label>
-                                                          <input type="text" class="form-control" id="QUESTION" placeholder="Enter a one line subject or ask a question">
+                                                          <input type="text" name="question_text" class="form-control" id="QUESTION" placeholder="Enter a one line subject or ask a question">
                                                      </div>
                                                      <div class="form-group">
                                                           <label for="details" style="color:#FF3D00;">ADD DETAILS</label>

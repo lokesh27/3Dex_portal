@@ -8,13 +8,13 @@ def index(request):
     pdf_list = Lesson.objects.filter(type="PDF")
     video_list= Lesson.objects.filter(type="VID")
     ppt_list=Lesson.objects.filter(type="PPT")
-    context={'first_name':request.user.first_name,'pdf_list':pdf_list,'video_list':video_list,'ppt_list':ppt_list}
+    context={'pdf_list':pdf_list,'video_list':video_list,'ppt_list':ppt_list}
     return render(request,'content/index.html',context)
 
 @login_required
 def detail(request, lesson_id):
     lesson = get_object_or_404(Lesson, pk=lesson_id)
     if lesson.allow==True:
-        return render(request, 'content/detail.html', {'lesson': lesson,'first_name':request.user.first_name})
+        return render(request, 'content/detail.html', {'lesson': lesson})
     else:
         return index(request)

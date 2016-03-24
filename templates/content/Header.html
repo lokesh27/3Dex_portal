@@ -24,9 +24,9 @@
                <div class="dropdown" style="padding:30px;margin-top:-20px;">
                    <a href="#" class="dropdown-toggle glyphicon glyphicon-user"  data-toggle="dropdown" id="two" style="margin-top: 5px;font-size: 20px;"><span class="caret"></span></a>
                <ul class="dropdown-menu" role="menu" aria-labelledby="two">
-                   <li><a href="/students/info">{{first_name}}</a></li>
+                   <li><a href="/students/info">{{request.user.first_name}}</a></li>
                    <li><a href="/logout">LogOut</a></li>
-                   {% if not first_name %}
+                   {% if not request.user.first_name %}
 
                    {% else %}
                    <li><a href="/feedback/send">Feedback</a></li>
