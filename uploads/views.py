@@ -7,10 +7,10 @@ from .forms import UploadForm
 def list(request):
     if request.method == 'POST':
         form = UploadForm(request.POST, request.FILES)
-        if form.is_valid() and request.POST.get('description','')!='':
-            description=request.POST['description']
-            newstl = upload(stlfile = request.FILES['stlfile'],name=""+request.user.first_name+" "+request.user.last_name,description=description)
-            newstl.save()
+        if form.is_valid():
+            description=request.POST.get('description','')
+            newsubmission = upload(file = request.FILES['file'],name=""+request.user.first_name+" "+request.user.last_name,description=description)
+            newsubmission.save()
             return index(request)
     else:
         form = UploadForm()

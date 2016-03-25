@@ -1,4 +1,18 @@
 {% load staticfiles %}
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert-error">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert-error">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
 <html>
     <head>
 
@@ -42,12 +56,12 @@
                                           {% csrf_token %}
                                           <p>{{ form.non_field_errors }}</p>
                                           <div class="panel-heading text-uppercase" style="color:#19b9e7;margin-left: 8vw;">
-                                          <p>{{ form.stlfile.label_tag }} </p>
+                                          <p>{{ form.file.label_tag }} </p>
                                           </div>
                                        <div class="panel-body" style="color:#19b9e7;">
                                           <p>
-                                          {{ form.stlfile.errors }}
-                                          {{ form.stlfile }}
+                                          {{ form.file.errors }}
+                                          {{ form.file }}
                                           </p>
                                           <div class="form-group">
 			                    		    <label class="sr-only" for="description">Description</label>
