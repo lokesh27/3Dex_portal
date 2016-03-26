@@ -2,6 +2,7 @@
 <html lang="en">
  <head>
     <title>DASHBOARD</title>
+    <link rel="icon" href="{% static 'favicon.png' %}" type="image/gif" sizes="16x16">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -48,16 +49,9 @@
            </div>
         </nav>
          <script>$("#ONE").hover(function(){$(this).css("overflow-y","scroll");},function(){$(this).css("overflow-y","hidden");});</script>
-    <!-- end normal
-          <div class="container-fluid pull-right scrollbar" id="ex3" style="overflow-y:scroll;background-color:#f9f9f9;border:1px solid #FFFFFF;border-radius: 10px;width:25vw;height:70vh;position:absolute;margin:70 10 100 74vw;box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);">
-                {% for news in News %}
-                    <div style="border-bottom:1px solid #E0E0E0;margin:10 0 10 0;">
-                    <h3 style="width: 100%;padding-left:5px;">{{news.news_heading}}</h3>
-                    {{news.news_text}}
-                    </div>
-              {% endfor %}
-          </div>
--->
+
+
+
       <div class="container-fluid" style="bottom:10;position:absolute;width:100%;">
          <script>jQuery.noConflict();
              $(document).ready(function() {
