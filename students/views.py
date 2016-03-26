@@ -26,7 +26,7 @@ def reg_form(request):
             phone_no=request.POST.get('phone_no','')
             school_name=request.POST.get('school_name','')
             class_name=request.POST.get('class_name','')
-            avatar = request.FILES['avatar']
+            avatar = request.FILES.get('avatar','')
             if flag=='update':
                 instance.first_name=first_name
                 instance.last_name=last_name
@@ -43,8 +43,7 @@ def reg_form(request):
             return info(request)
         else:
             print form.errors
-    else:
-        form = RegForm()
+    form = RegForm()
     context={'form': form,'student':instance}
     return render(request,'registration.html',context)
 

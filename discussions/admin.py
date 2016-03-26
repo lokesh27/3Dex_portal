@@ -9,8 +9,8 @@ class ReplyInline(admin.TabularInline):
 
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [ReplyInline]
-    list_display = ('question_text', 'pub_date', 'uploader','additional_info')
-    list_filter = ['pub_date', 'uploader']
+    list_display = ['question_text', 'pub_date', 'uploader','additional_info','for_school','for_class','show']
+    list_filter = ['pub_date', 'uploader','for_school','for_class','show']
     search_fields = ['question_text', 'uploader']
 
 

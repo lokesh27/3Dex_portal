@@ -8,6 +8,9 @@ class Question(models.Model):
     pub_date = models.DateTimeField('date published')
     uploader = models.CharField(max_length=30)
     additional_info=models.TextField(null=True,blank=True)
+    for_class=models.IntegerField(choices=((6, 6),(7, 7),(8, 8),(9, 9),))
+    for_school=models.CharField(max_length=30,choices=(('abc','abc'),('xyz','xyz'),('qwe','qwe')))
+    show=models.BooleanField(default=False)
     def __unicode__(self):
         return self.question_text
 
