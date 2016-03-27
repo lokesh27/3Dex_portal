@@ -9,7 +9,7 @@ class Student(models.Model):
     middle_name=models.CharField(max_length=20,blank=True)
     email_id=models.EmailField()
     phone_no=models.CharField(max_length=11,blank=True)
-    school_name=models.CharField(max_length=30,choices=(('abc','abc'),('xyz','xyz'),('qwe','qwe')))
+    school_name=models.CharField(max_length=30,choices=(('abc','abc'),('xyz','xyz'),('qwe','qwe'),('Happy School','Happy School')))
     class_name=models.IntegerField(choices=((6, 6),(7, 7),(8, 8),(9, 9),))
     avatar=models.ImageField(upload_to="profile_pictures",blank=True)
     def __unicode__(self):
