@@ -8,6 +8,7 @@ class RegForm(forms.ModelForm):
     ('abc', 'abc'),
     ('xyz', 'xyz'),
     ('qwe', 'qwe'),
+    ('Happy School','Happy School'),
     )
     classes = ((6, 6),(7,7),(8,8),(9,9),)
     first_name=forms.CharField(max_length=20)
