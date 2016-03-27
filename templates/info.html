@@ -2,6 +2,7 @@
 <html lang="en">
  <head>
     <title>HOME</title>
+     <link rel="icon" href="{% static 'favicon.png' %}" type="image/gif" sizes="16x16">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -15,8 +16,6 @@
              </div>
              <div class="panel-group">
                 <div class="panel panel-default" style="background-color:#f8f8f8;width:50vw;height:75vh;margin: 6vh 0 0 25vw;border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5); ">
-
-
                        <div class="panel-heading" style="background-color: #FFFFFF;padding:10px; ">
                            <img src="{% static 'image1.jpg' %}" width="100%" height="150px" style="filter:blur(2px);-webkit-filter: blur(2px);">
                        </div>
@@ -25,7 +24,7 @@
                              {% if student.avatar %}
                              <img src="{{student.avatar.url}}" class="img-circle"  width="150" height="150"  style="">
                              {% else %}
-                               <img src="{% static 'logo2.png' %}" class="img-circle"  width="150" height="150"  style="">
+                               <img src="{% static 'favicon.png' %}" class="img-circle"  width="150" height="150"  style="">
                                {% endif %}
                             </div>
                            {% if student %}
@@ -55,7 +54,7 @@
                              {{request.user.email}}
                            </div>
                            <div class="text-center" style="font-size: 20px;text-decoration: #942a25">
-                           Please update your phone number, school and class details
+                           Please update your school and class details.
                            </div>
                        {% endif %}
                        <a  class="btn btn-default pull-right" style="background-color: #19b9e7;color:#FFFFFF;margin-top:8vh" href="/students/reg">UPDATE</a>

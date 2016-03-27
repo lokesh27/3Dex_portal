@@ -13,7 +13,7 @@ def index(request):
     class_name=instance.class_name
     school_name=instance.school_name
     question_list=Question.objects.raw('SELECT * FROM discussions_question WHERE for_class = %s and for_school=%s and show=1 ', [class_name,school_name])
-    context = {'latest_question_list': question_list}
+    context = {'latest_question_list': question_list,'student':instance}
     return render(request, 'discussions/discuss.html', context)
 
 def ask(request):

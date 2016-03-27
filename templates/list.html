@@ -37,15 +37,18 @@
         <body style="background-color: #f9f9f9;">
         {% include 'content/Header.html' %}
                 <nav class="navbar  navbar-fixed-top" role="navigation" style="background-color: transparent;border: 0px solid white;width:10vw;margin-left: 16vw;margin-top: 5px;;">
-                     <div class="dropdown" style=";margin-top: 0vh;margin-left: 77vw;position:absolute;">
-                        <img src="{% static 'favicon.png' %}" class="img-circle" alt="Cinque Terre" width="40" height="40" data-toggle="dropdown" >
-                        <ul class="dropdown-menu dropdown-menu-right">
-                           <li><a href="#">HTML</a></li>
-                           <li><a href="#">CSS</a></li>
-                           <li><a href="#">JavaScript</a></li>
-                        </ul>
-                     </div>
-                </nav>
+           <div class="dropdown" style=";margin-top: 0vh;margin-left: 80vw;position:absolute;">
+               {% if student.avatar %}
+                <img src="{{student.avatar.url}}" class="img-circle" alt="Cinque Terre" width="40" height="40" data-toggle="dropdown" >
+                {% else %}
+                <img src="{% static 'favicon.png' %}" class="img-circle" alt="Cinque Terre" width="40" height="40" data-toggle="dropdown" >
+               {% endif %}
+                <ul class="dropdown-menu dropdown-menu-right">
+                   <li><a href="/students/info">{{request.user.first_name}}</a></li>
+                   <li><a href="/logout">LogOut</a></li>
+                </ul>
+           </div>
+        </nav>
                 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:#ffffff;border:0px solid #FFFFFF;width:500px;margin-left: 350px;margin-top: 0px;">
                    <div style="width:600px;margin-left: 100px;">
                        <ul class="nav nav-pills" style="margin-top: 10px;">
@@ -56,7 +59,7 @@
                        </ul>
                    </div>
                 </nav>
-                <div class="tab-content" id="ONE" style=" border:0px solid black;width:70vw;height:74vh;margin:7vh 30vw 0vh 19vw;background-color:#f9f9f9;">
+                <div class="tab-content" id="ONE" style=" border:0px solid black;width:83vw;height:74vh;margin:4vw 30vw 0vh 17vw;background-color:#f9f9f9;overflow-y: scroll;">
 
                         <!--FEEDBACK STATIC-->
                         <div class="text-center" style="display: block;position:absolute;margin-top: 48vh;margin-left:79.7vw;width:2vw;background-color: #e67e22;color: #FFFFFF;border-radius: 4px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;">

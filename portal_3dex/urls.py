@@ -32,3 +32,8 @@ urlpatterns = [
     url(r'^upload/',include('uploads.urls'),name='uploads'),
     url(r'^students/',include('students.urls'),name='students'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler400 = portal_3dex.views.handler500
+handler403 = portal_3dex.views.handler500
+handler404 = portal_3dex.views.handler404
+handler500 = portal_3dex.views.handler500

@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import render, render_to_response,RequestContext
+from django.contrib.auth import authenticate, login
 from django.template.context_processors import csrf
 from content.views import index
 
@@ -27,3 +27,14 @@ def auth_view(request):
         else:
             context={'error':'Invalid details. Please try again'}
             return render(request,'login1.html',context)
+
+def handler404(request):
+    response = render_to_response('404.html', {}, context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
+
+
+def handler500(request):
+    response = render_to_response('500.html', {}, context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
