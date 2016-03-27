@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <html lang="en">
  <head>
  	<title>HOME</title>
@@ -10,6 +11,16 @@
  <body style="background-color:#f8f8f8">
  	<div class="container-fluid">
         {% include 'content/Header.html' %}
+         <nav class="navbar  navbar-fixed-top" role="navigation" style="background-color: transparent;border: 0px solid white;width:10vw;margin-left: 16vw;margin-top: 5px;;">
+           <div class="dropdown" style=";margin-top: 0vh;margin-left: 77vw;position:absolute;">
+                        <img src="{% static 'favicon.png' %}" class="img-circle" alt="Cinque Terre" width="40" height="40" data-toggle="dropdown" >
+                        <ul class="dropdown-menu dropdown-menu-right">
+                           <li><a href="#">HTML</a></li>
+                           <li><a href="#">CSS</a></li>
+                           <li><a href="#">JavaScript</a></li>
+                        </ul>
+           </div>
+        </nav>
  	     <!--<ul class="pagination pull-right" style="margin-top:80px;">
               <li class="active"><a href="#">1</a></li>
               <li><a href="#">2</a></li>
