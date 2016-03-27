@@ -41,7 +41,7 @@
            <ul class="nav nav-pills" style="margin-top:10px;">
               <li><a href="/auth">RESOURCES</a></li>
               <li><a href="/upload/list/">SUBMISSION</a></li>
-              <li class="active"><a href="/discuss">DISCUSSIONS</a></li>
+              <li class="active"><a href="/discuss" style="background-color:#19b9e7;">DISCUSSIONS</a></li>
               <li><a href="/news">UPDATES/NEWS</a></li>
            </ul>
 
@@ -91,7 +91,7 @@
                                                           <label for="details" style="color:#FF3D00;">ADD DETAILS</label>
                                                           <textarea name="additional_info" class="form-control" rows="5" id="details" placeholder="Additional Details if any"></textarea>
                                                      </div>
-                                                     <button type="submit" class="btn  pull-right" style="background-color: #3498db;color:#FFFFFF" >Start Discussion</button>
+                                                     <button type="submit" class="btn  pull-right" style="background-color:#19b9e7;color:#FFFFFF" >Start Discussion</button>
                                                 </form>
                                               </div>
                                               </div>
@@ -102,7 +102,7 @@
                                       <div  class="text-justify" style="color: #333;font-size: 14px;height:auto;margin-left: 2vw;">
                                          <div style="width:55vw;"><strong style="font-size: 16px;">{{question.question_text}}</strong></div>
                                          <p style="color: #BDBDBD">Asked by:<strong>{{question.uploader}}</strong></p>
-                                         <a  class="btn pull-right" data-toggle="modal" data-target="#{{question.pk}}" style="background-color: #3498db;color:#FFFFFF;margin-top: -8vh;">View</a>
+                                         <a  class="btn pull-right" data-toggle="modal" data-target="#{{question.pk}}" style="background-color:#19b9e7;color:#FFFFFF;margin-top: -8vh;">View</a>
                                       </div>
                                 </div>
                                 <div id="{{question.pk}}" class="modal fade"  role="dialog">

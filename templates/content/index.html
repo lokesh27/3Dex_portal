@@ -19,9 +19,7 @@
      <!-- Include js plugin -->
     <script src="{% static 'owl-carousel/owl.carousel.js' %}"></script>
     <link href="{% static 'index.css' %}" rel="stylesheet">
-    <style>
-        span
-    </style>
+
  </head>
  <body style="background-color:#f9f9f9;">
 
@@ -42,7 +40,7 @@
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="float:left;background:#ffffff;border:0px solid #FFFFFF;width:500px;margin-left: 350px;margin-top: 0px;height:20px;">
          <div style="width:600px;margin-left: 100px;">
            <ul class="nav nav-pills" style="margin-top: 10px;">
-              <li class="active"><a href="/auth">RESOURCES</a></li>
+              <li class="active"><a href="/auth" style="background-color:#19b9e7;">RESOURCES</a></li>
               <li><a href="/upload/list/">SUBMISSION</a></li>
               <li><a href="/discuss">DISCUSSIONS</a></li>
               <li><a href="/news">UPDATES/NEWS</a></li>
@@ -72,7 +70,7 @@
                             <div  class="" style="color: #333;font-size: 14px;height:7vh;margin-left: 2vw;">
                                    <strong>{{lesson.lesson_name}}</strong>
                                    <p>{{lesson.short_description}}</p>
-                                   <a  class="btn pull-right" href="/content/{{ lesson.id }}/" target="_blank" style="background-color: #3498db;color:#FFFFFF;margin-top: -8vh;">View</a>
+                                   <a  class="btn pull-right" href="/content/{{ lesson.id }}/" target="_blank" style="background-color:#19b9e7;color:#FFFFFF;margin-top: -8vh;">View</a>
                              </div>
                         </div>
                         {% endfor %}
