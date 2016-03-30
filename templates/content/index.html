@@ -69,13 +69,19 @@
                   <div id="RESOURCES" class="tab-pane fade in active" style="margin-left: 2vw;">
                         <h3 style="font-size: 32px;"><strong>LESSONS</strong></h3>
                         {% for lesson in lesson_list %}
+                        {% if class_name in lesson.for_class  and student.school_name in lesson.for_school %}
                         <div style="padding: 1vw 1vw 0 0;background-color:#FFFFFF;margin-top: 1vw;width:60vw;border: 1px solid #eee;;">
                             <div  class="" style="color: #333;font-size: 14px;height:7vh;margin-left: 2vw;">
                                    <strong>{{lesson.lesson_name}}</strong>
                                    <p>{{lesson.short_description}}</p>
-                                   <a  class="btn pull-right" href="/content/{{ lesson.id }}/" target="_blank" style="background-color:#19b9e7;color:#FFFFFF;margin-top: -8vh;">View</a>
+                                    {% if lesson.allow %}
+                                    <a  class="btn pull-right" href="/content/{{ lesson.id }}/" target="_blank" style="background-color:#19b9e7;color:#FFFFFF;margin-top: -8vh;">View</a>
+                                    {% else %}
+                                    <a  class="btn pull-right" href="#" style="background-color:#D3D3D3;color:#FFFFFF;margin-top: -8vh;">View</a>
+                                    {% endif %}
                              </div>
                         </div>
+                        {% endif %}
                         {% endfor %}
                   </div>
         </div>

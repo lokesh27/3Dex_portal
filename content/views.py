@@ -10,8 +10,9 @@ def index(request):
         instance=Student.objects.get(email_id=request.user.email)
     except:
         instance=''
+    for_class=str(instance.class_name)
     lesson_list=Lesson.objects.order_by('added_date')
-    context={'lesson_list':lesson_list,'student':instance}
+    context={'lesson_list':lesson_list,'student':instance,'class_name':for_class}
     return render(request,'content/index.html',context)
 
 @login_required

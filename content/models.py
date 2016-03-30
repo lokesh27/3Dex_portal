@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-
+from multiselectfield import MultiSelectField
 from django.db import models
 
 # Create your models here.
@@ -13,7 +13,11 @@ class Lesson(models.Model):
     ('PPT', 'Presentation' ),
     ('PDF', 'Pdf'),
     ))
-    link=models.TextField(null=True,blank=True)
+    SCHOOL_CHOICES = (('abc', 'abc'),('xyz', 'xyz'),('qwe', 'qwe'),)
+    CLASS_CHOICES = ((6,6),(7,7),(8,8),(9,9),)
+    for_school = MultiSelectField(choices=SCHOOL_CHOICES)
+    for_class = MultiSelectField(choices=CLASS_CHOICES)
+    link=models.TextField()
     allow=models.BooleanField(default=False)
     def __unicode__(self):
         return self.lesson_name
