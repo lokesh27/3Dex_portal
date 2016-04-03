@@ -44,9 +44,9 @@
          <div style="width:600px;margin-left: 100px;">
            <ul class="nav nav-pills" style="margin-top: 10px;">
               <li class="active"><a href="/auth" style="background-color:#19b9e7;">RESOURCES</a></li>
-              <li><a href="/upload/list/">SUBMISSION</a></li>
+              <li><a href="/upload/list/">SUBMISSIONS</a></li>
               <li><a href="/discuss">DISCUSSIONS</a></li>
-              <li><a href="/news">UPDATES/NEWS</a></li>
+              <li><a href="/news">ANNOUNCEMENTS</a></li>
            </ul>
            </div>
         </nav>
@@ -67,7 +67,7 @@
                              </a>
                   </div>
                   <div id="RESOURCES" class="tab-pane fade in active" style="margin-left: 2vw;">
-                        <h3 style="font-size: 32px;"><strong>LESSONS</strong></h3>
+                        <h3 style="font-size: 32px;">LESSONS</h3>
                         {% for lesson in lesson_list %}
                         {% if class_name in lesson.for_class  and student.school_name in lesson.for_school %}
                         <div style="padding: 1vw 1vw 0 0;background-color:#FFFFFF;margin-top: 1vw;width:60vw;border: 1px solid #eee;;">

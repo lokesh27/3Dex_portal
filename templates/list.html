@@ -53,9 +53,9 @@
                    <div style="width:600px;margin-left: 100px;">
                        <ul class="nav nav-pills" style="margin-top: 10px;">
                           <li><a  href="/auth">RESOURCES</a></li>
-                          <li class="active"><a href="/upload/list/" style="background-color:#19b9e7;">SUBMISSION</a></li>
+                          <li class="active"><a href="/upload/list/" style="background-color:#19b9e7;">SUBMISSIONS</a></li>
                           <li><a href="/discuss">DISCUSSIONS</a></li>
-                          <li><a href="/news">UPDATES/NEWS</a></li>
+                          <li><a href="/news">ANNOUNCEMENTS</a></li>
                        </ul>
                    </div>
                 </nav>
@@ -75,13 +75,14 @@
                              </a>
                         </div>
                         <div id="SUBMISSION" class="tab-pane fade in active">
-                              <div class="container-fluid">
 
-                                 <div class="" style="position:absolute;margin:6vh 0 0 23vw;">
-                                    <h1 style="color:#000000;"><strong style="">UPLOAD</strong></h1>
+                              <div class="container-fluid" style="margin-left: 20vw;">
+
+                                 <div class="" style="position:absolute;margin:2vh 0 0 23vw;">
+                                    <h1 style="color:#000000;">UPLOAD</h1>
                                  </div>
                               <div class="panel-group">
-                                   <div class="panel panel-default" style="width:28vw;margin:25vh 0 0 15vw;border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5);">
+                                   <div class="panel panel-default" style="width:28vw;margin:15vh 0 0 15vw;border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5);">
                                        <form action="{% url 'list' %}" method="post" enctype="multipart/form-data">
                                           {% csrf_token %}
                                           <p>{{ form.non_field_errors }}</p>
@@ -93,6 +94,16 @@
                                           {{ form.file.errors }}
                                           {{ form.file }}
                                           </p>
+                                       <!--Dropdown for title-->
+                                          <select class="form-control" style="margin-bottom: 10px;">
+                                             <option  value="" selected disabled>Choose a Title</option>
+                                             <option>1</option>
+                                             <option>2</option>
+                                             <option>3</option>
+                                             <option>4</option>
+                                             <option>5</option>
+                                          </select>
+
                                           <div class="form-group">
 			                    		    <label class="sr-only" for="description">Description</label>
 			                        	    <input type="text" name="description" placeholder="Description" class="description form-control" id="description">
@@ -104,7 +115,9 @@
                                        </form>
                                    </div>
                               </div>
+
                               </div>
+
                         </div>
 
 
