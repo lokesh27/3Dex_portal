@@ -85,10 +85,10 @@
                                   <div class="panel-group">
                                    <div class="panel panel-default" style="position:absolute;width:28vw;height:46vh;margin:0vh 0 0 15vw;border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5);">
                                        <div class="panel-body" style="overflow-y: scroll;height:100%">
-                                           {% for i in "iiiiiiiiiii" %}
+                                           {% for upload in uploads %}
                                            <div style="height:auto;border-bottom: 1px solid darkgray;padding-top: 5px;">
                                                <p>
-                                                   <span style="color:#19b9e7;">Abhishek Aggarwal</span> of XYZ school has uplaoded <span style="color:#ff3d00;">"House.stl"</span>.
+                                                   <span style="color:#19b9e7;">{{upload.name}}</span> of class {{upload.class_name}} from {{upload.school_name}} has uplaoded <span style="color:#ff3d00;">{{upload.type}}</span>.
                                                </p>
                                            </div>
                                            {% endfor %}
@@ -115,13 +115,11 @@
                                           {{ form.file }}
                                           </p>
                                        <!--Dropdown for title-->
-                                          <select class="form-control" name="type" style="margin-bottom: 10px;">
-                                             <option  value="" selected disabled>Choose a Title</option>
-                                             <option>1</option>
-                                             <option>2</option>
-                                             <option>3</option>
-                                             <option>4</option>
-                                             <option>5</option>
+                                           <label for="type">Choose a title:</label>
+                                          <select class="form-control" id="type" name="type" style="margin-bottom: 10px;">
+                                              {% for text in dropdown %}
+                                             <option>{{text}}</option>
+                                             {% endfor %}
                                           </select>
 
                                           <div class="form-group">

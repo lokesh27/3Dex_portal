@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'uploads',
     'news',
     'discussions',
+    'dropdowns',
 ]
 
 MIDDLEWARE_CLASSES = [
