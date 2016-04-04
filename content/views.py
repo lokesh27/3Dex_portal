@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Lesson
+from .models import Lesson,MakersBoard
 from django.contrib.auth.decorators import login_required
 from students.models import Student
 
@@ -11,8 +11,9 @@ def index(request):
     except:
         instance=''
     for_class=str(instance.class_name)
+    makers_board=MakersBoard.objects.filter(show=True)
     lesson_list=Lesson.objects.order_by('added_date')
-    context={'lesson_list':lesson_list,'student':instance,'class_name':for_class}
+    context={'lesson_list':lesson_list,'student':instance,'class_name':for_class,'makers':makers_board}
     return render(request,'content/index.html',context)
 
 @login_required

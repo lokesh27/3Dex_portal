@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from forms import RegForm
-from content.views import index
 from django.contrib.auth.decorators import login_required
 from models import Student
 

@@ -4,6 +4,7 @@ from forms import QuestionForm,AnswerForm
 import datetime
 from students.models import Student
 from students.views import info
+from content.models import MakersBoard
 # Create your views here.
 def index(request):
     try:
@@ -12,8 +13,9 @@ def index(request):
         return info(request)
     class_name=instance.class_name
     school_name=instance.school_name
+    makers_board=MakersBoard.objects.filter(show=True)
     question_list=Question.objects.raw('SELECT * FROM discussions_question WHERE for_class = %s and for_school=%s and show=1 ORDER BY pub_date DESC', [class_name,school_name])
-    context = {'latest_question_list': question_list,'student':instance}
+    context = {'latest_question_list': question_list,'student':instance,'makers':makers_board}
     return render(request, 'discussions/discuss.html', context)
 
 def ask(request):

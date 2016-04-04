@@ -22,3 +22,11 @@ class Lesson(models.Model):
     def __unicode__(self):
         return self.lesson_name
 
+class MakersBoard(models.Model):
+    imgfile=models.ImageField()
+    student_name=models.CharField(max_length=30)
+    student_class=models.IntegerField()
+    student_school=models.CharField(max_length=30)
+    show=models.BooleanField(default=False)
+    def __unicode__(self):
+        return self.student_name

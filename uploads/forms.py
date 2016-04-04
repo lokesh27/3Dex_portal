@@ -11,3 +11,4 @@ class UploadForm(forms.Form):
 
     file = forms.FileField(label='Select a file',validators=[validate_file_extension])
     description=forms.CharField(widget=forms.Textarea)
+    type=forms.CharField(max_length=50)
