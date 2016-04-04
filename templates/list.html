@@ -74,15 +74,35 @@
                                   <span style="display: block;">K</span>
                              </a>
                         </div>
-                        <div id="SUBMISSION" class="tab-pane fade in active">
+                        <div id="SUBMISSION" class="tab-pane fade in active" style="margin-left: -15vw; width:90vw;">
 
-                              <div class="container-fluid" style="margin-left: 20vw;">
 
-                                 <div class="" style="position:absolute;margin:2vh 0 0 23vw;">
+
+                                  <!--recent posts-->
+                                  <div class="" style="position:absolute;margin:-20vh 0 0 17vw;">
+                                    <h1 style="color:#000000;font-size: ;">RECENT UPLOADS</h1>
+                                  </div>
+                                  <div class="panel-group">
+                                   <div class="panel panel-default" style="position:absolute;width:28vw;height:46vh;margin:0vh 0 0 15vw;border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5);">
+                                       <div class="panel-body" style="overflow-y: scroll;height:100%">
+                                           {% for i in "iiiiiiiiiii" %}
+                                           <div style="height:auto;border-bottom: 1px solid darkgray;padding-top: 5px;">
+                                               <p>
+                                                   <span style="color:#19b9e7;">Abhishek Aggarwal</span> of XYZ school has uplaoded <span style="color:#ff3d00;">"House.stl"</span>.
+                                               </p>
+                                           </div>
+                                           {% endfor %}
+                                       </div>
+                                   </div>
+                              </div>
+
+                              <!--UPLOAD-->
+
+                              <div class="" style="position:absolute;margin:-20vh 0 0 58vw;">
                                     <h1 style="color:#000000;">UPLOAD</h1>
-                                 </div>
+                              </div>
                               <div class="panel-group">
-                                   <div class="panel panel-default" style="width:28vw;margin:15vh 0 0 15vw;border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5);">
+                                   <div class="panel panel-default" style="width:28vw;margin:20vh 0 0 50vw;border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5);">
                                        <form action="{% url 'list' %}" method="post" enctype="multipart/form-data">
                                           {% csrf_token %}
                                           <p>{{ form.non_field_errors }}</p>
@@ -116,7 +136,7 @@
                                    </div>
                               </div>
 
-                              </div>
+
 
                         </div>
 
