@@ -55,3 +55,11 @@ def info(request):
         pass
     context={'student':instance}
     return render(request,'info.html',context)
+
+def update_picture(request):
+    instance = Student.objects.get(email_id=request.user.email)
+    if request.method == 'POST':
+        avatar = request.FILES.get('avatar','')
+        instance.avatar=avatar
+        instance.save()
+    return info(request)

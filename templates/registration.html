@@ -56,6 +56,7 @@
                         		</div>
                             </div>
                             <div class="form-bottom contact-form">
+                            {% if not student.school_name %}
                             <form id="reg_form" method="post" action="/students/reg/" enctype="multipart/form-data" data-toggle="validator">
                                 {% csrf_token %}
                                 <div class="form-group">
@@ -85,6 +86,15 @@
 			                        	<!--<input type="text" name="class_name" placeholder="Class..." class="form-control">-->
                                         {{form.class_name}}
 			                        </div>
+                                    {% else %}
+                                    {{student.first_name}}
+                                    {{student.middle_name}}
+                                    {{student.last_name}}
+                                    {{student.class_name}}
+                                    {{student.school_name}}
+                                    <form method="post" action="/students/picture/" enctype="multipart/form-data" data-toggle="validator">
+                                        {% csrf_token %}
+                                    {% endif %}
                                     <div class="form-group">
 			                        	<label class="sr-only" for="avatar">AVATAR</label>
                                         {{form.avatar.errors }}
