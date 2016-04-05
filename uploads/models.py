@@ -9,5 +9,6 @@ class upload(models.Model):
     file = models.FileField(upload_to='submissions/%Y/%m/%d',)
     school_name=models.CharField(max_length=30)
     class_name=models.IntegerField()
+    time=models.DateTimeField('submit_date')
     def __unicode__(self):
         return self.name

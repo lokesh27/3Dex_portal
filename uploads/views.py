@@ -1,4 +1,4 @@
-from django.shortcuts import render
+import datetime
 from django.template.response import TemplateResponse
 from .models import upload
 from .forms import UploadForm
@@ -22,7 +22,8 @@ def list(request):
             type=request.POST.get('type','')
             class_name=instance.class_name
             school_name=instance.school_name
-            newsubmission = upload(file = request.FILES['file'],name=""+request.user.first_name+" "+request.user.last_name,description=description,type=type,school_name=school_name,class_name=class_name)
+            time=datetime.datetime.now()
+            newsubmission = upload(file = request.FILES['file'],name=""+request.user.first_name+" "+request.user.last_name,description=description,type=type,school_name=school_name,class_name=class_name,time=time)
             newsubmission.save()
             return show_submissions(request)
     else:
@@ -34,7 +35,7 @@ def show_submissions(request):
         instance=Student.objects.get(email_id=request.user.email)
     except:
         return info
-    upload_list=upload.objects.all()
+    upload_list=upload.objects.order_by('-time')[:10]
     form = UploadForm()
     dropdowns=upload_dropdown.objects.all()
     makers_board=MakersBoard.objects.filter(show=True)
