@@ -83,12 +83,12 @@
                                     <h1 style="color:#000000;font-size: ;">RECENT UPLOADS</h1>
                                   </div>
                                   <div class="panel-group">
-                                   <div class="panel panel-default" style="position:absolute;width:28vw;height:46vh;margin:0vh 0 0 15vw;border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5);">
+                                   <div class="panel panel-default" style="position:absolute;width:28vw;height:50vh;margin:0vh 0 0 15vw;border-radius: 8px; box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, .5);">
                                        <div class="panel-body" style="overflow-y: scroll;height:100%">
                                            {% for upload in uploads %}
                                            <div style="height:auto;border-bottom: 1px solid darkgray;padding-top: 5px;">
                                                <p>
-                                                   <span style="color:#19b9e7;">{{upload.name}}</span> of class {{upload.class_name}} from {{upload.school_name}} has uplaoded <span style="color:#ff3d00;">{{upload.type}}</span>.
+                                                   <span style="color:#19b9e7;">{{upload.name}}</span> of class {{upload.class_name}} from {{upload.school_name}} has uploaded <span style="color:#ff3d00;">{{upload.type}}</span>.
                                                </p>
                                            </div>
                                            {% endfor %}
@@ -117,6 +117,7 @@
                                        <!--Dropdown for title-->
                                            <label for="type">Choose a title:</label>
                                           <select class="form-control" id="type" name="type" style="margin-bottom: 10px;">
+                                             <option selected disabled></option>
                                               {% for text in dropdown %}
                                              <option>{{text}}</option>
                                              {% endfor %}
