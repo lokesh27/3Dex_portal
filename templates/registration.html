@@ -87,11 +87,34 @@
                                         {{form.class_name}}
 			                        </div>
                                     {% else %}
-                                    {{student.first_name}}
-                                    {{student.middle_name}}
-                                    {{student.last_name}}
-                                    {{student.class_name}}
-                                    {{student.school_name}}
+                                    <label style="font-size: 24px;">
+                                        <strong>
+                                                <span style="display: inline-block;">NAME </span>
+                                                <span style="display: inline-block;margin-left: 5vw;">: {{student.first_name}}</span>
+                                                <span style="display: inline-block;">{{student.middle_name}}</span>
+                                                <span style="display: inline-block;">{{student.last_name}}</span>
+                                        </strong>
+                                    </label>
+                                    <label style="font-size: 24px;display: block;">
+                                        <strong>
+                                                <span style="display: inline-block;">SCHOOL </span>
+                                                <span style="display: inline-block;margin-left: 2.7vw;">: {{student.school_name}}</span>
+                                        </strong>
+                                    </label>
+                                    <label style="font-size: 24px;display: block;">
+                                        <strong>
+                                                <span style="display: inline-block;">CLASS </span>
+                                                <span style="display: inline-block;margin-left: 4.3vw;">: {{student.class_name}}</span>
+                                        </strong>
+                                    </label>
+                                    <label style="font-size: 24px;display: block;">
+                                        <strong>
+                                                <span style="display: inline-block;">PHONE NO. </span>
+                                                <span style="display: inline-block;margin-left: 0.4vw;">: {{student.phone_no}}</span>
+                                        </strong>
+                                    </label>
+
+
                                     <form method="post" action="/students/picture/" enctype="multipart/form-data" data-toggle="validator">
                                         {% csrf_token %}
                                     {% endif %}
