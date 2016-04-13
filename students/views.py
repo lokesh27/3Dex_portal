@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect, render_to_response
 from forms import RegForm
 from django.contrib.auth.decorators import login_required
 from models import Student
+from django.contrib.auth.forms import PasswordChangeForm
 
 @login_required
 def reg_form(request):
@@ -48,12 +49,23 @@ def reg_form(request):
 
 @login_required
 def info(request):
+    success = None
+    message=''
     try:
         instance = Student.objects.get(email_id=request.user.email)
     except:
         instance=''
         pass
-    context={'student':instance}
+    if request.method == 'POST':
+        form = PasswordChangeForm(user=request.user,data=request.POST)
+        if form.is_valid(): # All validation rules pass
+            form.save()
+            success = True
+            return HttpResponseRedirect('/password_change_done')
+        else:
+            message="Make sure you entered correct old password and same new passwords. Try again"
+    form = PasswordChangeForm(request.user)
+    context={'student':instance,'form':form,'success':success,'message':message}
     return render(request,'info.html',context)
 
 def update_picture(request):

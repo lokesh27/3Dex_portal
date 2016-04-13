@@ -28,7 +28,6 @@ urlpatterns = [
     url(r'^$', portal_3dex.views.do_login),
     url(r'^logout/$', logout, {'next_page': '/'}),
     url(r'^auth/$', portal_3dex.views.auth_view),
-    url(r'^password_change/$', portal_3dex.views.password_change),
     url(r'^password_change_done/$', portal_3dex.views.password_change_done),
     url(r'^feedback/', include('feedback.urls'),name='feedback'),
     url(r'^upload/',include('uploads.urls'),name='uploads'),

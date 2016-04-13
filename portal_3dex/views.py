@@ -31,19 +31,6 @@ def auth_view(request):
             return render(request,'login1.html',context)
 
 @login_required
-def password_change(request):
-    success = None
-    if request.method == 'POST':
-        form = PasswordChangeForm(user=request.user,data=request.POST)
-        if form.is_valid(): # All validation rules pass
-            form.save()
-            success = True
-            return HttpResponseRedirect('/password_change_done')
-    else:
-        form = PasswordChangeForm(request.user)
-    return render_to_response('login.html',{'form':form,'success':success},context_instance=RequestContext(request))
-
-@login_required
 def password_change_done(request):
     return render_to_response('password_change_done.html',{},context_instance=RequestContext(request))
 

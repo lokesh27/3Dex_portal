@@ -57,9 +57,10 @@
                            Please update your school and class details.
                            </div>
                        {% endif %}
+                           {{message}}
                        <a  class="btn btn-default pull-right" style="background-color: #19b9e7;color:#FFFFFF;margin-top:8vh" href="/students/reg">UPDATE</a>
-                       <a  class="btn btn-default pull-right" style="background-color: #19b9e7;color:#FFFFFF;margin-top:-5.3vh;margin-right:37vw;" href="{{LOGIN_URL}}/password_change">Change Password</a>
-                       <!--<div id="modal1" class="modal fade" role="dialog">
+                       <a  class="btn btn-default pull-right" style="background-color: #19b9e7;color:#FFFFFF;margin-top:-5.3vh;margin-right:37vw;" data-toggle="modal" data-target="#modal1">Change Password</a>
+                       <div id="modal1" class="modal fade" role="dialog">
                           <div class="modal-dialog modal-lg" style="width:40vw;margin-left: 30.5vw;">
                             <div class="modal-content" style="background-color: transparent;margin-top:23vh;width:40vw;margin-left: 0vw;">
                                 <div class="modal-header">
@@ -67,7 +68,7 @@
                                   <div class="" style="color:#FFFFFF;display:inline-block;">Change Password</div>
                                 </div>
                                 <div class="modal-body" style="background-color: #FFFFFF;">
-                                    <form enctype="multipart/form-data" action="/password_change/" method="post">
+                                    <form enctype="multipart/form-data" action="/students/info/" method="post">
                                     {% csrf_token %}
                                     {{form}}
                                      <button type="submit" class="btn btn-default" style="background-color: #19b9e7;color:#FFFFFF;margin-left:32vw;">SUBMIT</button>
