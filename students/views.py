@@ -50,7 +50,6 @@ def reg_form(request):
 @login_required
 def info(request):
     success = None
-    message=''
     try:
         instance = Student.objects.get(email_id=request.user.email)
     except:
@@ -62,10 +61,8 @@ def info(request):
             form.save()
             success = True
             return HttpResponseRedirect('/password_change_done')
-        else:
-            message="Make sure you entered correct old password and same new passwords. Try again"
     form = PasswordChangeForm(request.user)
-    context={'student':instance,'form':form,'success':success,'message':message}
+    context={'student':instance,'form':form,'success':success}
     return render(request,'info.html',context)
 
 def update_picture(request):
