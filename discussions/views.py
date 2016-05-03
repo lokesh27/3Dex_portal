@@ -14,7 +14,7 @@ def index(request):
     class_name=instance.class_name
     school_name=instance.school_name
     makers_board=MakersBoard.objects.filter(show=True)
-    question_list=Question.objects.raw('SELECT * FROM discussions_question WHERE for_class = %s and for_school=%s and show=1 ORDER BY pub_date DESC', [class_name,school_name])
+    question_list=Question.objects.raw('SELECT * FROM discussions_question WHERE for_class = %s and for_school=%s and show="1" ORDER BY pub_date DESC', [class_name,school_name])
     context = {'latest_question_list': question_list,'student':instance,'makers':makers_board}
     return render(request, 'discussions/discuss.html', context)
 
