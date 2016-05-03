@@ -83,8 +83,12 @@ WSGI_APPLICATION = 'portal_3dex.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd2s6qo84jhqa0u',                      
+        'USER': 'heutiknzyiqtkh',
+        'PASSWORD': 'Iqd8Yoq5flgJrKnI2sjpIFcVui',
+        'HOST': 'ec2-54-243-195-46.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
