@@ -44,7 +44,7 @@
                 <img src="{% static 'favicon.png' %}" class="img-circle" alt="Cinque Terre" width="40" height="40" data-toggle="dropdown" >
                {% endif %}
                 <ul class="dropdown-menu dropdown-menu-right">
-                   <li><a href="/students/info">{{request.user.first_name}}</a></li>
+                   <li><a href="/students/info">{{user.first_name}}</a></li>
                    <li><a href="/logout">Logout</a></li>
                 </ul>
            </div>
