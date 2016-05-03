@@ -8,9 +8,10 @@ from students.models import Student
 def index(request):
     try:
         instance=Student.objects.get(email_id=request.user.email)
+		for_class=str(instance.class_name)
     except:
         instance=''
-    for_class=str(instance.class_name)
+		for_class=''
     makers_board=MakersBoard.objects.filter(show=True)
     lesson_list=Lesson.objects.order_by('added_date')
     context={'lesson_list':lesson_list,'student':instance,'class_name':for_class,'makers':makers_board}
