@@ -13,7 +13,7 @@ def index(request):
 		return info(request)
     for_class=str(instance.class_name)
     makers_board=MakersBoard.objects.filter(show=True)
-    lesson_list=Lesson.objects.order_by('added_date')
+    lesson_list=Lesson.objects.order_by('-added_date')
     context={'lesson_list':lesson_list,'student':instance,'class_name':for_class,'makers':makers_board}
     return render(request,'content/index.html',context)
 
