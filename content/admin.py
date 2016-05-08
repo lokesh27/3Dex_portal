@@ -7,7 +7,7 @@ class LessonAdmin(admin.ModelAdmin):
     search_fields = ['lesson_name','short_description','full_description']
 
 class MakersAdmin(admin.ModelAdmin):
-    list_display = ('imgfile','student_name','student_school','student_class','show')
+    list_display = ('student_name','imgfile','student_school','student_class','show')
     list_filter = ['show','student_class','student_school']
     search_fields = ['student_name','student_school','student_class']
 admin.site.register(Lesson,LessonAdmin)

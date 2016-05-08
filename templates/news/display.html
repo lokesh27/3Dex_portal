@@ -1,13 +1,13 @@
 {% load staticfiles %}
 <html lang="en">
  <head>
-    <title>UPDATES/NEWS</title>
+    <title>ANNOUNCEMENTS</title>
     <link rel="icon" href="{% static 'favicon.png' %}" type="image/gif" sizes="16x16">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!-- Important Owl plugins -->
     <link rel="stylesheet" href="{% static 'owl-carousel/owl.carousel.css' %}">
@@ -33,7 +33,7 @@
                 <img src="{% static 'favicon.png' %}" class="img-circle" alt="Cinque Terre" width="40" height="40" data-toggle="dropdown" >
                {% endif %}
                 <ul class="dropdown-menu dropdown-menu-right">
-                   <li><a href="/students/info">{{user.first_name}}</a></li>
+                   <li><a href="/students/info">{{request.user.first_name}}</a></li>
                    <li><a href="/logout">Logout</a></li>
                 </ul>
            </div>
@@ -66,7 +66,7 @@
                              </a>
                     </div>
                     <div id="UPDATES" class="tab-pane fade in active" style="margin-left: 2vw;">
-                        <h3 style="font-size: 32px;">NEWS</h3>
+                        <h3 style="font-size: 32px;">News</h3>
                         {% for news in news_list %}
                         <div style="padding: 1vw 1vw 0 0;background-color:#FFFFFF;margin-top: 1vw;width:60vw;border: 1px solid #eee;height:auto;">
                             <div  class="text-justify" style="color: #333;font-size: 14px;margin-left: 2vw;margin-top: -4vh;margin-bottom: 2vh;">

@@ -10,5 +10,5 @@ class UploadForm(forms.Form):
             raise ValidationError(u'Please upload valid submission format')
 
     file = forms.FileField(label='Select a file',validators=[validate_file_extension])
-    description=forms.CharField(widget=forms.Textarea)
+    description=forms.CharField(widget=forms.Textarea,required=False)
     type=forms.CharField(max_length=50)
