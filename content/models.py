@@ -25,7 +25,7 @@ class Lesson(models.Model):
 class MakersBoard(models.Model):
     imgfile=models.ImageField()
     student_name=models.CharField(max_length=30)
-    student_class=models.IntegerField()
+    student_class=models.CharField(max_length=10)
     student_school=models.CharField(max_length=30)
     show=models.BooleanField(default=False)
     def __unicode__(self):
